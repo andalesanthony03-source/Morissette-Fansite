@@ -41,7 +41,7 @@ nav{
 .logo{
   font-family:'Playfair Display', serif;
   color:#f3c16d;
-  font-size: clamp(32px, 4vw, 80px);
+  font-size: clamp(30px, 4vw, 75px);
   line-height:1;
   white-space:nowrap;
   max-width:60%; /* make sure it doesn't push hamburger */
