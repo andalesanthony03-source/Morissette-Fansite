@@ -33,17 +33,6 @@
     </nav>
   </header>
 
-  <script>
-function toggleMenu(){
-  document.querySelector(".nav-links").classList.toggle("show");
-}
-
-window.addEventListener("scroll", () => {
-  document.querySelector("header")
-    .classList.toggle("shrink", window.scrollY > 80);
-});
-</script>
-
   <!-- HERO -->
   <section class="hero" id="home">
 
@@ -217,6 +206,17 @@ setInterval(() => {
 
 </section>
 
+<script>
+function toggleMenu(){
+  document.querySelector(".nav-links").classList.toggle("show");
+}
+
+window.addEventListener("scroll", () => {
+  document.querySelector("header")
+    .classList.toggle("shrink", window.scrollY > 80);
+});
+</script>
+  
   <!-- FOOTER -->
   <footer>
     <p>
@@ -224,5 +224,7 @@ setInterval(() => {
     </p>
   </footer>
 
+
+  
 </body>
 </html>
