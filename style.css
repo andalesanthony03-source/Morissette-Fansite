@@ -92,6 +92,7 @@ header.shrink .nav-links{
    MOBILE
 ========================= */
 
+/* MOBILE */
 @media(max-width:768px){
 
   body{
@@ -99,15 +100,22 @@ header.shrink .nav-links{
   }
 
   nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
     flex-wrap:wrap;
+    padding:15px 8%;
   }
 
-  /* show hamburger */
+  /* hamburger */
   .menu-toggle{
     display:block;
+    font-size:30px;
+    color:#f3c16d;
+    cursor:pointer;
   }
 
-  /* hide menu by default */
+  /* hidden menu */
   .nav-links{
     display:none;
     width:100%;
@@ -117,19 +125,20 @@ header.shrink .nav-links{
     text-align:center;
   }
 
-  /* show menu when active */
+  /* show menu */
   .nav-links.show{
     display:flex;
   }
 
-  /* mobile shrink */
+  /* shrink effect */
   header.shrink nav{
-    padding:8px 8%;
+    padding:10px 8%;
   }
 
   header.shrink .logo{
     font-size:32px;
   }
+}
 }
 
 /* HERO */
