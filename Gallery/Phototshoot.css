@@ -1,0 +1,556 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins', sans-serif;
+  background:#120018;
+  color:white;
+}
+
+/* =========================
+   NAVBAR BASE
+========================= */
+
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+  background:#120018;
+  transition:0.3s ease;
+}
+
+/* BODY OFFSET */
+body{
+  padding-top:140px;
+}
+
+/* NAV CONTAINER */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 8%;
+  transition:0.3s ease;
+   position: relative; 
+}
+
+/* LOGO */
+.logo{
+  font-family:'Playfair Display', serif;
+  color:#f3c16d;
+  font-size:clamp(32px, 4vw, 80px);
+  line-height:1;
+  transition:0.3s ease;
+}
+
+/* NAV LINKS */
+.nav-links{
+  display:flex;
+  list-style:none;
+  gap:30px;
+  align-items:center;
+}
+
+/* LINKS */
+nav a{
+  text-decoration:none;
+  color:white;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#f3c16d;
+}
+
+/* =========================
+   HAMBURGER MENU
+========================= */
+
+.menu-toggle{
+  display:none;          /* hidden on desktop */
+  font-size:32px;
+  color:#f3c16d;
+  cursor:pointer;
+  flex-shrink:0;         /* never shrink */
+  order:2;                /* ensure it stays after logo in flex */
+   position: relative;    /* <-- ADD THIS */
+  z-index: 2000;         /* <-- ADD THIS */
+}
+
+/* =========================
+   SHRINK EFFECT
+========================= */
+
+header.shrink nav{
+  padding:10px 8%;
+}
+
+header.shrink .logo{
+  font-size:40px;
+}
+
+header.shrink .nav-links{
+  gap:15px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+  body{
+    padding-top:110px;
+  }
+
+  nav{
+    flex-wrap:wrap;
+    padding:15px 8%;
+  }
+
+  /* SHOW HAMBURGER */
+  .menu-toggle{
+    display:block;
+  }
+
+  .menu-toggle.hide{
+  display:none;
+}
+
+  /* HIDE MENU */
+  .nav-links{
+    display:none;
+    width:100%;
+    flex-direction:column;
+    text-align:center;
+    gap:15px;
+    margin-top:15px;
+      position: absolute;   /* <-- ADD THIS */
+  top: 100%;            /* <-- ADD THIS */
+  left: 0;              /* <-- ADD THIS */
+  z-index: 1000;        /* <-- ADD THIS */
+  background:#120018;   /* optional, ensures it blends with navbar */
+  }
+
+  /* SHOW WHEN CLICKED */
+  .nav-links.show{
+    display:flex;
+  }
+
+  /* MOBILE SHRINK */
+  header.shrink nav{
+    padding:8px 8%;
+  }
+
+  header.shrink .logo{
+    font-size:32px;
+  }
+}
+
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:50px 8%;
+  gap:40px;
+}
+
+.hero-text{
+  flex:1;
+}
+
+.hero-text h2{
+  font-size:4rem;
+  font-family:'Playfair Display', serif;
+  color:#f3c16d;
+  margin-bottom:20px;
+}
+
+.hero-text p{
+  max-width:500px;
+  line-height:1.8;
+}
+
+.buttons{
+  margin-top:30px;
+  display:flex;
+  gap:15px;
+}
+
+.buttons a{
+  padding:12px 20px;
+  border:1px solid #f3c16d;
+  color:#f3c16d;
+  text-decoration:none;
+  border-radius:30px;
+}
+
+.hero-image img{
+  width:450px;
+  border-radius:20px;
+  box-shadow:0 0 40px rgba(243,193,109,0.3);
+}
+
+/* HIGHLIGHTS */
+
+.highlights{
+  padding:100px 8%;
+}
+
+.highlights h2{
+  text-align:center;
+  margin-bottom:50px;
+  font-size:2.5rem;
+  color:#f3c16d;
+}
+
+.card-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:#1e0a28;
+  padding:20px;
+  border-radius:20px;
+}
+
+.card img{
+  width:100%;
+  border-radius:15px;
+  margin-bottom:15px;
+}
+
+.card{
+  text-decoration: none;
+  color: white;
+  display: block;
+  transition: 0.3s ease;
+}
+
+.card:hover{
+  transform: translateY(-5px);
+}
+
+.gallery {
+  padding: 60px 8%;
+  text-align: center;
+}
+
+.gallery h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2.5rem;
+  color: #f3c16d;
+}
+
+.slideshow-container {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 20px;
+  cursor: pointer; /* indicate clickable */
+}
+
+.slide {
+  display: none;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  user-select: none; /* prevent image selection while tapping */
+}
+
+/* Fade Effect */
+.fade {
+  animation: fade 0.5s ease-in-out;
+}
+
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* Remove arrows completely */
+.prev,
+.next {
+  display: none; /* hide old buttons */
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .slide img {
+    height: 300px;
+  }
+}
+
+/* DOTS */
+.dots-container {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dot.active {
+  background: #f3c16d;
+}
+
+
+
+
+
+
+
+.Billboard {
+  padding: 60px 8%;
+  text-align: center;
+}
+
+.Billboard h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2.5rem;
+  color: #f3c16d;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* SEE MORE BUTTON */
+.see-more-container {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.see-more-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 1rem;
+  color: #120018;
+  background: #f3c16d;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.see-more-btn:hover {
+  background: #d1ad4f;
+  transform: scale(1.05);
+}
+
+
+/* FOOTER */
+
+footer{
+  text-align:center;
+  padding:40px;
+  background:#0b0010;
+}
+
+
+
+/* =========================
+   AWARDS
+========================= */
+
+.awards{
+  padding:100px 8%;
+  text-align:center;
+}
+
+.awards h2{
+  font-size:2.5rem;
+  color:#f3c16d;
+  margin-bottom:50px;
+}
+
+.awards-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  gap:25px;
+}
+
+.award-card{
+  background:#1e0a28;
+  padding:20px;
+  border-radius:20px;
+}
+
+.award-card img{
+  width:100%;
+  border-radius:15px;
+  margin-bottom:15px;
+}
+
+.award-card h3{
+  color:#f3c16d;
+  margin-bottom:10px;
+}
+
+/* =========================
+   UPDATES
+========================= */
+
+.updates{
+  padding:100px 8%;
+  text-align:center;
+}
+
+.updates h2{
+  font-size:2.5rem;
+  color:#f3c16d;
+  margin-bottom:50px;
+}
+
+.updates-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  gap:25px;
+}
+
+.update-card{
+  background:#1e0a28;
+  padding:20px;
+  border-radius:20px;
+  text-align:left;
+}
+
+.update-card h3{
+  color:#f3c16d;
+  margin-bottom:10px;
+}
+
+.update-card p{
+  line-height:1.6;
+}
+
+
+/* =========================
+   RESPONSIVE FIX (NO DESIGN CHANGES)
+========================= */
+
+/* Make all images scale properly */
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+
+
+
+/* =========================
+   HERO FIX
+========================= */
+@media(max-width:768px){
+
+  .hero{
+    flex-direction:column;
+    text-align:center;
+    padding:40px 8%;
+  }
+
+  .hero-text h2{
+    font-size:2.2rem;
+  }
+
+  .hero-text p{
+    max-width:100%;
+    margin:0 auto;
+  }
+
+  .buttons{
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+  .hero-image img{
+    width:100%;
+    max-width:320px;
+  }
+}
+
+/* =========================
+   HIGHLIGHTS FIX
+========================= */
+@media(max-width:768px){
+
+  .highlights{
+    padding:70px 5%;
+  }
+
+  .highlights h2{
+    font-size:2rem;
+  }
+}
+
+/* =========================
+   GALLERY FIX
+========================= */
+@media(max-width:768px){
+
+  .slideshow-container{
+    max-width:100%;
+  }
+
+  .slide img{
+    height:auto;
+    max-height:300px;
+    object-fit:cover;
+  }
+
+  .prev,
+  .next{
+    font-size:18px;
+    padding:12px;
+  }
+}
+
+/* =========================
+   SMALL PHONES (extra fix)
+========================= */
+@media(max-width:480px){
+
+  .hero-text h2{
+    font-size:1.8rem;
+  }
+
+  nav ul{
+    gap:8px;
+  }
+}
