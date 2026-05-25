@@ -59,17 +59,16 @@ nav a{
 ========================= */
 
 header.shrink nav{
-  padding:10px 8%;
+  padding:8px 8%;
 }
 
 header.shrink .logo{
-  font-size: 50px;
+  font-size: 34px;
 }
 
 header.shrink nav ul{
-  gap:20px;
+  gap:6px;
 }
-
 /* =========================
    HIDE ON SCROLL (optional)
 ========================= */
@@ -112,6 +111,24 @@ body{
     font-size: 36px;
   }
 }
+
+
+@media(max-width:768px){
+
+  header.shrink{
+    background: rgba(18, 0, 24, 0.95);
+    backdrop-filter: blur(6px);
+  }
+
+  header.shrink nav{
+    padding:5px 8%;
+  }
+
+  header.shrink nav ul{
+    font-size: 14px;
+  }
+}
+
 
 /* MENU */
 nav ul{
