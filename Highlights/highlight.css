@@ -1,0 +1,364 @@
+
+body{
+  font-family:'Poppins', sans-serif;
+  background:#120018;
+  color:white;
+}
+
+/* LIVE PERFORMANCES */
+
+.performances{
+  padding:100px 8%;
+}
+
+.performances h2{
+  text-align:center;
+  margin-bottom:50px;
+  font-size:2.5rem;
+  color:#f3c16d;
+}
+
+.video-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+}
+
+.video-card{
+  position:relative;
+  overflow:hidden;
+  border-radius:20px;
+  text-decoration:none;
+  color:white;
+  display:block;
+  transition:0.3s ease;
+}
+
+.video-card:hover{
+  transform:translateY(-5px);
+}
+
+.video-card img{
+  width:100%;
+  display:block;
+  border-radius:20px;
+}
+
+/* TITLE */
+.video-title{
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  padding:20px;
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,0.9),
+    rgba(0,0,0,0)
+  );
+
+  transition:0.4s ease;
+}
+
+.video-title h3{
+  font-size:1.4rem;
+}
+
+/* DESCRIPTION OVERLAY */
+.video-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.88);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:25px;
+
+  opacity:0;
+  transition:0.4s ease;
+}
+
+.video-overlay h3{
+  margin-bottom:15px;
+  font-size:1.5rem;
+  color:#f3c16d;
+}
+
+.video-overlay p{
+  line-height:1.6;
+  font-size:0.95rem;
+}
+
+/* HOVER EFFECT */
+.video-card:hover .video-title{
+  opacity:0;
+}
+
+.video-card:hover .video-overlay{
+  opacity:1;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .video-overlay{
+    opacity:1;
+    position:relative;
+    inset:auto;
+    border-radius:0 0 20px 20px;
+  }
+
+  .video-title{
+    display:none;
+  }
+
+}
+
+/* TITLE */
+.video-title{
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  padding:25px 20px;
+
+  /* stronger gradient for readability */
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,0.95),
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,0)
+  );
+
+  transition:0.4s ease;
+}
+
+.video-title h3{
+  font-size:1.5rem;
+  color:white;
+
+  /* shadow for better visibility */
+  text-shadow: 0 4px 10px rgba(0,0,0,0.9);
+  letter-spacing:0.5px;
+}
+
+
+/* Ember PERFORMANCES */
+
+.ember-performances{
+  margin-top:100px;
+}
+
+.ember-performances h2{
+  margin-bottom:30px;
+  color:#f3c16d;
+  text-align:center;
+}
+
+.performance-list{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.performance-item{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  background:#1e0a28;
+  padding:15px;
+  border-radius:20px;
+  text-decoration:none;
+  color:white;
+  transition:0.3s ease;
+}
+
+.performance-item:hover{
+  transform:scale(1.02);
+}
+
+.performance-item img{
+  width:220px;
+  border-radius:15px;
+}
+
+.performance-info h3{
+  margin-bottom:8px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .performance-item{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .performance-item img{
+    width:100%;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MORE PERFORMANCES */
+
+.more-performances{
+  margin-top:80px;
+}
+
+.more-performances h2{
+  margin-bottom:30px;
+  color:#f3c16d;
+  text-align:center;
+}
+
+.performance-list{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.performance-item{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  background:#1e0a28;
+  padding:15px;
+  border-radius:20px;
+  text-decoration:none;
+  color:white;
+  transition:0.3s ease;
+}
+
+.performance-item:hover{
+  transform:scale(1.02);
+}
+
+.performance-item img{
+  width:220px;
+  border-radius:15px;
+}
+
+.performance-info h3{
+  margin-bottom:8px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .performance-item{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .performance-item img{
+    width:100%;
+  }
+
+}
+
+/* =========================
+   NEW MUSIC PAGE
+========================= */
+
+.music{
+  padding:100px 8%;
+}
+
+.music h2{
+  text-align:center;
+  margin-bottom:50px;
+  font-size:2.5rem;
+  color:#f3c16d;
+}
+
+.music-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.music-card{
+  background:#1e0a28;
+  padding:20px;
+  border-radius:20px;
+  text-align:center;
+}
+
+.music-card img{
+  width:100%;
+  border-radius:15px;
+  margin-bottom:15px;
+}
+
+
+/* =========================
+   UPCOMING EVENTS PAGE
+========================= */
+
+.events{
+  padding:100px 8%;
+}
+
+.events h2{
+  text-align:center;
+  margin-bottom:50px;
+  font-size:2.5rem;
+  color:#f3c16d;
+}
+
+.event-container{
+  display:flex;
+  flex-direction:column;
+  gap:25px;
+}
+
+.event-card{
+  background:#1e0a28;
+  padding:25px;
+  border-radius:20px;
+}
+
+.event-card h3{
+  color:#f3c16d;
+  margin-bottom:10px;
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+  .performances,
+  .music,
+  .events{
+    padding:70px 5%;
+  }
+
+  .performances h2,
+  .music h2,
+  .events h2{
+    font-size:2rem;
+  }
+
+  .video-card iframe{
+    height:200px;
+  }
+
+}
