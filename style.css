@@ -251,6 +251,8 @@ header.shrink .nav-links{
 .gallery h2{
   font-size: 2rem;
   margin-bottom: 30px;
+  text-align:center;
+  color:#f3c16d;
 }
 
 .slideshow-container{
