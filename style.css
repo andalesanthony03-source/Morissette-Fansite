@@ -242,91 +242,108 @@ header.shrink .nav-links{
   transform: translateY(-5px);
 }
 
-/* GALLERY */
-.gallery{
+.gallery {
   padding: 60px 8%;
   text-align: center;
 }
 
-.gallery h2{
-  font-size: 2rem;
-  margin-bottom: 30px;
-  text-align:center;
-  color:#f3c16d;
+.gallery h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2.5rem;
+  color: #f3c16d;
 }
 
-.slideshow-container{
+.slideshow-container {
   position: relative;
   max-width: 900px;
   margin: auto;
   overflow: hidden;
   border-radius: 20px;
+  cursor: pointer; /* indicate clickable */
 }
 
-.slide{
+.slide {
   display: none;
 }
 
-.slide img{
+.slide img {
   width: 100%;
   height: auto;
   display: block;
   border-radius: 20px;
+  user-select: none; /* prevent image selection while tapping */
 }
+
 /* Fade Effect */
-.fade{
+.fade {
   animation: fade 0.5s ease-in-out;
 }
 
-@keyframes fade{
-  from{opacity: .4}
-  to{opacity: 1}
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
 }
 
-/* Buttons */
+/* Remove arrows completely */
 .prev,
-.next{
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 16px;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  background: rgba(0,0,0,0.4);
-  border-radius: 50%;
-  user-select: none;
-  transition: 0.3s;
-}
-
-.prev:hover,
-.next:hover{
-  background: rgba(0,0,0,0.7);
-}
-
-.prev{
-  left: 15px;
-}
-
-.next{
-  right: 15px;
+.next {
+  display: none; /* hide old buttons */
 }
 
 /* MOBILE */
-@media(max-width:768px){
-
-.slide img{
-  height: 300px;
-}
-
-  .prev,
-  .next{
-    font-size: 18px;
-    padding: 12px;
+@media (max-width: 768px) {
+  .slide img {
+    height: 300px;
   }
-
 }
+
+/* DOTS */
+.dots-container {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dot.active {
+  background: #f3c16d;
+}
+
+
+/* SEE MORE BUTTON */
+.see-more-container {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.see-more-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 1rem;
+  color: #120018;
+  background: #f3c16d;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.see-more-btn:hover {
+  background: #d1ad4f;
+  transform: scale(1.05);
+}
+
 
 /* FOOTER */
 
