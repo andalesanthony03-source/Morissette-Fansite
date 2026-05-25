@@ -21,11 +21,16 @@ header{
   background:#120018;
 }
 
-/* prevents content hiding behind fixed header */
+/* use safe spacing */
 body{
-  padding-top: 120px;
+  padding-top: 140px;
 }
 
+@media(max-width:768px){
+  body{
+    padding-top: 180px;
+  }
+}
 nav{
   display:flex;
   justify-content:space-between;
