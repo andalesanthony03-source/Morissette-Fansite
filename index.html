@@ -22,7 +22,20 @@ window.addEventListener("scroll", () => {
   }
 });
   
+</script> 
+
+<script>
+function toggleMenu(){
+  document.querySelector(".nav-links").classList.toggle("show");
+}
+
+/* optional: auto shrink on scroll */
+window.addEventListener("scroll", () => {
+  document.querySelector("header")
+    .classList.toggle("shrink", window.scrollY > 80);
+});
 </script>
+  
 <body>
 
   <!-- NAVBAR -->
@@ -30,7 +43,11 @@ window.addEventListener("scroll", () => {
     <nav>
       <h1 class="logo">MORISSETTE</h1>
 
-      <ul>
+<div class="menu-toggle" onclick="toggleMenu()">
+  ☰
+</div>
+      
+      <ul class="nav-links"> 
         <li><a href="#home">Home</a></li>
         <li><a href="#performances">Performances</a></li>
         <li><a href="#awards">Awards</a></li>
