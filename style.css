@@ -15,13 +15,18 @@ body{
 ========================= */
 
 header{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
   background:#120018;
-  transition: all 0.3s ease;
+  transition:0.3s ease;
+}
+
+/* BODY OFFSET */
+body{
+  padding-top:140px;
 }
 
 /* NAV CONTAINER */
@@ -30,22 +35,24 @@ nav{
   justify-content:space-between;
   align-items:center;
   padding:20px 8%;
-  transition: 0.3s ease;
+  transition:0.3s ease;
 }
 
 /* LOGO */
 .logo{
   font-family:'Playfair Display', serif;
   color:#f3c16d;
-  font-size: clamp(32px, 4vw, 80px);
+  font-size:clamp(32px, 4vw, 80px);
   line-height:1;
+  transition:0.3s ease;
 }
 
-/* MENU */
-nav ul{
+/* NAV LINKS */
+.nav-links{
   display:flex;
   list-style:none;
   gap:30px;
+  align-items:center;
 }
 
 /* LINKS */
@@ -55,79 +62,8 @@ nav a{
 }
 
 /* =========================
-   SHRINK EFFECT
+   HAMBURGER MENU
 ========================= */
-
-header.shrink nav{
-  padding:8px 8%;
-}
-
-header.shrink .logo{
-  font-size: 34px;
-}
-
-header.shrink nav ul{
-  gap:6px;
-}
-/* =========================
-   HIDE ON SCROLL (optional)
-========================= */
-
-header.hide{
-  transform: translateY(-100%);
-}
-
-/* =========================
-   BODY OFFSET (fixed header fix)
-========================= */
-
-body{
-  padding-top: 140px;
-}
-
-/* =========================
-   MOBILE FIX
-========================= */
-
-@media(max-width:768px){
-
-  nav{
-    flex-direction:column;
-    gap:10px;
-    padding:15px 8%;
-  }
-
-  nav ul{
-    flex-direction:column;
-    gap:10px;
-    align-items:center;
-  }
-
-  body{
-    padding-top: 180px;
-  }
-
-  header.shrink .logo{
-    font-size: 36px;
-  }
-}
-
-
-@media(max-width:768px){
-
-  header.shrink{
-    background: rgba(18, 0, 24, 0.95);
-    backdrop-filter: blur(6px);
-  }
-
-  header.shrink nav{
-    padding:5px 8%;
-  }
-
-  header.shrink nav ul{
-    font-size: 14px;
-  }
-}
 
 .menu-toggle{
   display:none;
@@ -136,59 +72,63 @@ body{
   cursor:pointer;
 }
 
-/* MOBILE DEFAULT */
-@media(max-width:768px){
+/* =========================
+   SHRINK EFFECT
+========================= */
 
-  .menu-toggle{
-    display:block;
-  }
-
-  .nav-links{
-    display:none;
-    flex-direction:column;
-    gap:10px;
-    text-align:center;
-    margin-top:10px;
-  }
-
-  .nav-links.show{
-    display:flex;
-  }
+header.shrink nav{
+  padding:10px 8%;
 }
 
-/* WHEN SHRINKED (OPTIONAL STYLE) */
-header.shrink .menu-toggle{
-  font-size:26px;
+header.shrink .logo{
+  font-size:40px;
 }
 
-/* MENU */
-nav ul{
-  display:flex;
-  list-style:none;
-  gap:30px;
-  align-items:center;
+header.shrink .nav-links{
+  gap:15px;
 }
 
-nav a{
-  text-decoration:none;
-  color:white;
-}
-
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:768px){
 
   body{
-    padding-top: 160px;
+    padding-top:120px;
   }
 
   nav{
-    flex-direction:column;
-    gap:10px;
+    flex-wrap:wrap;
   }
 
-  nav ul{
+  /* show hamburger */
+  .menu-toggle{
+    display:block;
+  }
+
+  /* hide menu by default */
+  .nav-links{
+    display:none;
+    width:100%;
     flex-direction:column;
     gap:10px;
+    margin-top:15px;
+    text-align:center;
+  }
+
+  /* show menu when active */
+  .nav-links.show{
+    display:flex;
+  }
+
+  /* mobile shrink */
+  header.shrink nav{
+    padding:8px 8%;
+  }
+
+  header.shrink .logo{
+    font-size:32px;
   }
 }
 
