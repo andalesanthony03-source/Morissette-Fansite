@@ -10,17 +10,6 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
-
-<script>
-function toggleMenu(){
-  document.querySelector(".nav-links").classList.toggle("show");
-}
-
-window.addEventListener("scroll", () => {
-  document.querySelector("header")
-    .classList.toggle("shrink", window.scrollY > 80);
-});
-</script>
   
 <body>
 
@@ -43,6 +32,17 @@ window.addEventListener("scroll", () => {
       </ul>
     </nav>
   </header>
+
+  <script>
+function toggleMenu(){
+  document.querySelector(".nav-links").classList.toggle("show");
+}
+
+window.addEventListener("scroll", () => {
+  document.querySelector("header")
+    .classList.toggle("shrink", window.scrollY > 80);
+});
+</script>
 
   <!-- HERO -->
   <section class="hero" id="home">
