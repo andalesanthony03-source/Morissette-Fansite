@@ -24,29 +24,29 @@ header{
   transition: 0.3s ease;
 }
 
-/* BODY OFFSET */
 body{
-  padding-top:140px; /* adjust if header height changes */
+  padding-top:140px;
 }
 
-/* NAV CONTAINER */
 nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
   padding:20px 8%;
-  flex-wrap:nowrap; /* prevents wrapping */
-  transition: 0.3s ease;
+  transition:0.3s ease;
+  flex-wrap:nowrap; /* prevent wrapping */
 }
 
 /* LOGO */
 .logo{
   font-family:'Playfair Display', serif;
   color:#f3c16d;
-  font-size: clamp(32px, 4vw, 80px); /* scales on screen */
+  font-size: clamp(32px, 4vw, 80px);
   line-height:1;
-  white-space: nowrap;
-  transition:0.3s ease;
+  white-space:nowrap;
+  max-width:70%; /* make sure it doesn't push hamburger */
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 
 /* NAV LINKS */
@@ -70,11 +70,11 @@ nav a:hover{
 
 /* HAMBURGER */
 .menu-toggle{
-  display:none; /* only show on mobile */
+  display:none;
   font-size:32px;
   color:#f3c16d;
   cursor:pointer;
-  margin-left: auto;
+  margin-left:auto;
   flex-shrink:0;
 }
 
@@ -108,9 +108,10 @@ header.shrink .nav-links{
     position:relative;
   }
 
-  /* LOGO SMALLER */
+  /* LOGO SMALLER AND MAX WIDTH */
   .logo{
     font-size: clamp(22px, 6vw, 28px);
+    max-width:65%; /* prevent overflow */
   }
 
   /* SHOW HAMBURGER */
