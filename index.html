@@ -12,24 +12,17 @@
 </head>
 
 <script>
-let lastScroll = 0;
 const header = document.querySelector("header");
 
-window.addEventListener("scroll", function () {
-  let currentScroll = window.pageYOffset;
-
-  if (currentScroll > 80) {
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 80) {
     header.classList.add("shrink");
   } else {
     header.classList.remove("shrink");
   }
-
-  lastScroll = currentScroll;
 });
-</script>
-
-
   
+</script>
 <body>
 
   <!-- NAVBAR -->
