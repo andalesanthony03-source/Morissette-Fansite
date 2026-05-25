@@ -51,40 +51,31 @@ nav a{
   gap:40px;
 }
 
-.hero-text{
-  flex:1;
-}
+/* MOBILE STACK */
+@media(max-width:768px){
 
-.hero-text h2{
-  font-size:4rem;
-  font-family:'Playfair Display', serif;
-  color:#f3c16d;
-  margin-bottom:20px;
-}
+  .hero{
+    flex-direction: column;
+    text-align: center;
+  }
 
-.hero-text p{
-  max-width:500px;
-  line-height:1.8;
-}
+  .hero-text h2{
+    font-size: 2.2rem;
+  }
 
-.buttons{
-  margin-top:30px;
-  display:flex;
-  gap:15px;
-}
+  .hero-text p{
+    max-width: 100%;
+  }
 
-.buttons a{
-  padding:12px 20px;
-  border:1px solid #f3c16d;
-  color:#f3c16d;
-  text-decoration:none;
-  border-radius:30px;
-}
+  .buttons{
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 
-.hero-image img{
-  width:450px;
-  border-radius:20px;
-  box-shadow:0 0 40px rgba(243,193,109,0.3);
+  .hero-image img{
+    width: 100%;
+    max-width: 320px;
+  }
 }
 
 /* HIGHLIGHTS */
