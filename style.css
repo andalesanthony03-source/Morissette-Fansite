@@ -13,25 +13,40 @@ body{
 /* NAVBAR */
 
 header{
-  padding:20px 8%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background:#120018;
+}
+
+/* prevents content hiding behind fixed header */
+body{
+  padding-top: 120px;
 }
 
 nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  padding:10px 8%;
 }
 
+/* LOGO FIX (responsive-safe) */
 .logo{
   font-family:'Playfair Display', serif;
   color:#f3c16d;
-  font-size: 100px;
+  font-size: clamp(32px, 4vw, 80px);
+  line-height:1;
 }
 
+/* MENU */
 nav ul{
   display:flex;
   list-style:none;
   gap:30px;
+  align-items:center;
 }
 
 nav a{
@@ -219,6 +234,84 @@ footer{
   padding:40px;
   background:#0b0010;
 }
+
+
+
+/* =========================
+   AWARDS
+========================= */
+
+.awards{
+  padding:100px 8%;
+  text-align:center;
+}
+
+.awards h2{
+  font-size:2.5rem;
+  color:#f3c16d;
+  margin-bottom:50px;
+}
+
+.awards-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  gap:25px;
+}
+
+.award-card{
+  background:#1e0a28;
+  padding:20px;
+  border-radius:20px;
+}
+
+.award-card img{
+  width:100%;
+  border-radius:15px;
+  margin-bottom:15px;
+}
+
+.award-card h3{
+  color:#f3c16d;
+  margin-bottom:10px;
+}
+
+/* =========================
+   UPDATES
+========================= */
+
+.updates{
+  padding:100px 8%;
+  text-align:center;
+}
+
+.updates h2{
+  font-size:2.5rem;
+  color:#f3c16d;
+  margin-bottom:50px;
+}
+
+.updates-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  gap:25px;
+}
+
+.update-card{
+  background:#1e0a28;
+  padding:20px;
+  border-radius:20px;
+  text-align:left;
+}
+
+.update-card h3{
+  color:#f3c16d;
+  margin-bottom:10px;
+}
+
+.update-card p{
+  line-height:1.6;
+}
+
 
 /* =========================
    RESPONSIVE FIX (NO DESIGN CHANGES)
