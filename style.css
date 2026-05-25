@@ -41,6 +41,10 @@ header.shrink nav ul{
   gap:20px;
 }
 
+header.hide{
+  transform: translateY(-100%);
+}
+
 /* use safe spacing */
 body{
   padding-top: 140px;
