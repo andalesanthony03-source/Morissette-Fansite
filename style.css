@@ -219,3 +219,117 @@ footer{
   padding:40px;
   background:#0b0010;
 }
+
+/* =========================
+   RESPONSIVE FIX (NO DESIGN CHANGES)
+========================= */
+
+/* Make all images scale properly */
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+
+/* =========================
+   NAVBAR FIX
+========================= */
+@media(max-width:768px){
+
+  nav{
+    flex-direction:column;
+    gap:15px;
+    text-align:center;
+  }
+
+  nav ul{
+    flex-direction:column;
+    gap:10px;
+    padding:0;
+  }
+
+  .logo{
+    font-size: clamp(40px, 8vw, 70px);
+  }
+}
+
+/* =========================
+   HERO FIX
+========================= */
+@media(max-width:768px){
+
+  .hero{
+    flex-direction:column;
+    text-align:center;
+    padding:40px 8%;
+  }
+
+  .hero-text h2{
+    font-size:2.2rem;
+  }
+
+  .hero-text p{
+    max-width:100%;
+    margin:0 auto;
+  }
+
+  .buttons{
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+  .hero-image img{
+    width:100%;
+    max-width:320px;
+  }
+}
+
+/* =========================
+   HIGHLIGHTS FIX
+========================= */
+@media(max-width:768px){
+
+  .highlights{
+    padding:70px 5%;
+  }
+
+  .highlights h2{
+    font-size:2rem;
+  }
+}
+
+/* =========================
+   GALLERY FIX
+========================= */
+@media(max-width:768px){
+
+  .slideshow-container{
+    max-width:100%;
+  }
+
+  .slide img{
+    height:auto;
+    max-height:300px;
+    object-fit:cover;
+  }
+
+  .prev,
+  .next{
+    font-size:18px;
+    padding:12px;
+  }
+}
+
+/* =========================
+   SMALL PHONES (extra fix)
+========================= */
+@media(max-width:480px){
+
+  .hero-text h2{
+    font-size:1.8rem;
+  }
+
+  nav ul{
+    gap:8px;
+  }
+}
