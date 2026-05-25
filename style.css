@@ -129,6 +129,37 @@ body{
   }
 }
 
+.menu-toggle{
+  display:none;
+  font-size:30px;
+  color:#f3c16d;
+  cursor:pointer;
+}
+
+/* MOBILE DEFAULT */
+@media(max-width:768px){
+
+  .menu-toggle{
+    display:block;
+  }
+
+  .nav-links{
+    display:none;
+    flex-direction:column;
+    gap:10px;
+    text-align:center;
+    margin-top:10px;
+  }
+
+  .nav-links.show{
+    display:flex;
+  }
+}
+
+/* WHEN SHRINKED (OPTIONAL STYLE) */
+header.shrink .menu-toggle{
+  font-size:26px;
+}
 
 /* MENU */
 nav ul{
