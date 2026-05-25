@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Morissette Fan Site</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <nav>
+      <h1 class="logo">MORISSETTE</h1>
+
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#performances">Performances</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#updates">Updates</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+
+    <div class="hero-text">
+      <h2>Vocal Powerhouse.<br>World-Class Performer.</h2>
+
+      <p>
+        A fan-made hub dedicated to Morissette’s
+        music, performances, and achievements.
+      </p>
+
+      <div class="buttons">
+        <a href="https://www.youtube.com/@MorissettePH">YouTube</a>
+        <a href="https://open.spotify.com/artist/62WbvkXqQGvXQvw74GU3kQ">Spotify</a>
+        <a href="https://www.instagram.com/itsMorissette/">Instagram</a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="Images/hero.jpg" alt="Morissette">
+    </div>
+
+  </section>
+
+<!-- HIGHLIGHTS -->
+<section class="highlights">
+
+  <h2>Latest Highlights</h2>
+
+  <div class="card-container">
+
+    <a href="Highlights/live-performances.html" class="card">
+      <img src="Images/STB.jpg">
+      <h3>Live Performances</h3>
+    </a>
+
+    <a href="Highlights/new-music.html" class="card">
+      <img src="Images/newmusic.jpg">
+      <h3>New Music</h3>
+    </a>
+
+    <a href="Highlights/upcoming-events.html" class="card">
+      <img src="Images/ember.jpg">
+      <h3>Upcoming Events</h3>
+    </a>
+
+  </div>
+
+</section>
+
+ <!-- GALLERY -->
+<section class="gallery" id="gallery">
+
+  <h2>Gallery</h2>
+
+  <div class="slideshow-container">
+
+    <div class="slide fade">
+      <img src="Images/Phoenix1.jpg" alt="">
+    </div>
+
+    <div class="slide fade">
+      <img src="Images/Phoenix2.jpg" alt="">
+    </div>
+
+    <div class="slide fade">
+      <img src="Images/Phoenix3.jpg" alt="">
+    </div>
+
+    <div class="slide fade">
+      <img src="Images/Phoenix4.jpg" alt="">
+    </div>
+
+    <!-- Buttons -->
+    <a class="prev" onclick="changeSlide(-1)">❮</a>
+    <a class="next" onclick="changeSlide(1)">❯</a>
+
+  </div>
+
+  <script>
+let slideIndex = 0;
+showSlides(slideIndex);
+
+function changeSlide(n) {
+  showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+
+  let slides = document.getElementsByClassName("slide");
+
+  if (n >= slides.length) {
+    slideIndex = 0;
+  }
+
+  if (n < 0) {
+    slideIndex = slides.length - 1;
+  }
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  slides[slideIndex].style.display = "block";
+}
+
+/* Auto Slide */
+setInterval(() => {
+  slideIndex++;
+  showSlides(slideIndex);
+}, 4000);
+</script>
+
+</section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      Made with love by Stan Morissette.
+    </p>
+  </footer>
+
+</body>
+</html>
