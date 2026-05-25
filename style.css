@@ -10,7 +10,15 @@ body{
   color:white;
 }
 
-/* NAVBAR */
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+
+/* =========================
+   NAVBAR
+========================= */
 
 header{
   padding:20px 8%;
@@ -20,6 +28,7 @@ nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  flex-wrap:wrap;
 }
 
 .logo{
@@ -28,11 +37,12 @@ nav{
   font-size: clamp(28px, 5vw, 60px);
 }
 
-
 nav ul{
   display:flex;
   list-style:none;
-  gap:30px;
+  gap:20px;
+  flex-wrap:wrap;
+  justify-content:center;
 }
 
 nav a{
@@ -40,23 +50,9 @@ nav a{
   color:white;
 }
 
-@media (max-width: 768px){
-
-  nav{
-    flex-direction: column;
-    gap: 15px;
-    text-align: center;
-  }
-
-  nav ul{
-    flex-direction: column;
-    gap: 10px;
-  }
-
-}
-
-
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero{
   min-height:100vh;
@@ -67,34 +63,46 @@ nav a{
   gap:40px;
 }
 
-/* MOBILE STACK */
-@media(max-width:768px){
-
-  .hero{
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-text h2{
-    font-size: 2.2rem;
-  }
-
-  .hero-text p{
-    max-width: 100%;
-  }
-
-  .buttons{
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .hero-image img{
-    width: 100%;
-    max-width: 320px;
-  }
+.hero-text{
+  flex:1;
 }
 
-/* HIGHLIGHTS */
+.hero-text h2{
+  font-size:4rem;
+  font-family:'Playfair Display', serif;
+  color:#f3c16d;
+  margin-bottom:20px;
+}
+
+.hero-text p{
+  max-width:500px;
+  line-height:1.8;
+}
+
+.buttons{
+  margin-top:30px;
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.buttons a{
+  padding:12px 20px;
+  border:1px solid #f3c16d;
+  color:#f3c16d;
+  text-decoration:none;
+  border-radius:30px;
+}
+
+.hero-image img{
+  width:450px;
+  border-radius:20px;
+  box-shadow:0 0 40px rgba(243,193,109,0.3);
+}
+
+/* =========================
+   HIGHLIGHTS
+========================= */
 
 .highlights{
   padding:100px 8%;
@@ -113,7 +121,6 @@ nav a{
   gap:25px;
 }
 
-/* CARD */
 .card{
   background:#1e0a28;
   padding:20px;
@@ -124,115 +131,154 @@ nav a{
   transition:0.3s ease;
 }
 
-/* IMAGE */
-.card img{
-  width:100%;
-  border-radius:15px;
-  margin-bottom:15px;
-  display:block;
-}
-
-/* HOVER EFFECT */
 .card:hover{
   transform:translateY(-5px);
 }
 
-/* GALLERY */
+.card img{
+  width:100%;
+  border-radius:15px;
+  margin-bottom:15px;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
 .gallery{
-  padding: 60px 8%;
-  text-align: center;
+  padding:60px 8%;
+  text-align:center;
 }
 
 .gallery h2{
-  font-size: 2rem;
-  margin-bottom: 30px;
+  font-size:2rem;
+  margin-bottom:30px;
 }
 
 .slideshow-container{
-  position: relative;
-  max-width: 900px;
-  margin: auto;
-  overflow: hidden;
-  border-radius: 20px;
-}
-
-.slideshow-container{
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  position:relative;
+  max-width:900px;
+  margin:auto;
+  overflow:hidden;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
 .slide{
-  display: none;
+  display:none;
 }
 
 .slide img{
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 20px;
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:20px;
 }
-/* Fade Effect */
+
+/* fade animation */
 .fade{
-  animation: fade 0.5s ease-in-out;
+  animation:fade 0.5s ease-in-out;
 }
 
 @keyframes fade{
-  from{opacity: .4}
-  to{opacity: 1}
+  from{opacity:.4}
+  to{opacity:1}
 }
 
-/* Buttons */
+/* arrows */
 .prev,
 .next{
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 16px;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  background: rgba(0,0,0,0.4);
-  border-radius: 50%;
-  user-select: none;
-  transition: 0.3s;
+  cursor:pointer;
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  padding:16px;
+  color:white;
+  font-size:24px;
+  font-weight:bold;
+  background:rgba(0,0,0,0.4);
+  border-radius:50%;
+  user-select:none;
+  transition:0.3s;
+  z-index:10;
 }
 
 .prev:hover,
 .next:hover{
-  background: rgba(0,0,0,0.7);
+  background:rgba(0,0,0,0.7);
 }
 
-.prev, .next{
-  z-index: 10;
-}
+.prev{ left:15px; }
+.next{ right:15px; }
 
-/* MOBILE */
-@media(max-width:768px){
-
-  .slideshow-container{
-    max-width: 100%;
-  }
-
-  .slide img{
-    height: auto;
-    max-height: 300px;
-    object-fit: cover;
-  }
-
-  .prev,
-  .next{
-    font-size: 18px;
-    padding: 12px;
-  }
-
-}
-
-}
-
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
   text-align:center;
   padding:40px;
   background:#0b0010;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media(max-width:768px){
+
+  /* HERO */
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .hero-text h2{
+    font-size:2.2rem;
+  }
+
+  .hero-text p{
+    max-width:100%;
+  }
+
+  .hero-image img{
+    width:100%;
+    max-width:320px;
+  }
+
+  .buttons{
+    justify-content:center;
+  }
+
+  /* NAV */
+  nav{
+    flex-direction:column;
+    gap:15px;
+  }
+
+  nav ul{
+    flex-direction:column;
+    gap:10px;
+  }
+
+  /* GALLERY */
+  .slide img{
+    max-height:300px;
+    object-fit:cover;
+  }
+
+  .prev,
+  .next{
+    font-size:18px;
+    padding:12px;
+  }
+
+  /* HIGHLIGHTS */
+  .highlights{
+    padding:70px 5%;
+  }
+
+  .highlights h2{
+    font-size:2rem;
+  }
 }
