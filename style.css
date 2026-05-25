@@ -19,6 +19,26 @@ header{
   width: 100%;
   z-index: 1000;
   background:#120018;
+  transition: all 0.3s ease;
+}
+
+/* NORMAL STATE */
+header nav{
+  padding:20px 8%;
+  transition: 0.3s ease;
+}
+
+/* COLLAPSED STATE */
+header.shrink nav{
+  padding:10px 8%;
+}
+
+header.shrink .logo{
+  font-size: 50px;
+}
+
+header.shrink nav ul{
+  gap:20px;
 }
 
 /* use safe spacing */
