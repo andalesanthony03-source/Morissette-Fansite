@@ -44,7 +44,7 @@ nav{
   font-size: clamp(32px, 4vw, 80px);
   line-height:1;
   white-space:nowrap;
-  max-width:70%; /* make sure it doesn't push hamburger */
+  max-width:60%; /* make sure it doesn't push hamburger */
   overflow:hidden;
   text-overflow:ellipsis;
 }
