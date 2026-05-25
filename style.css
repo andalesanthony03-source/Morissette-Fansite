@@ -10,7 +10,9 @@ body{
   color:white;
 }
 
-/* NAVBAR */
+/* =========================
+   NAVBAR BASE
+========================= */
 
 header{
   position: fixed;
@@ -22,13 +24,40 @@ header{
   transition: all 0.3s ease;
 }
 
-/* NORMAL STATE */
-header nav{
+/* NAV CONTAINER */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
   padding:20px 8%;
   transition: 0.3s ease;
 }
 
-/* COLLAPSED STATE */
+/* LOGO */
+.logo{
+  font-family:'Playfair Display', serif;
+  color:#f3c16d;
+  font-size: clamp(32px, 4vw, 80px);
+  line-height:1;
+}
+
+/* MENU */
+nav ul{
+  display:flex;
+  list-style:none;
+  gap:30px;
+}
+
+/* LINKS */
+nav a{
+  text-decoration:none;
+  color:white;
+}
+
+/* =========================
+   SHRINK EFFECT
+========================= */
+
 header.shrink nav{
   padding:10px 8%;
 }
@@ -41,33 +70,47 @@ header.shrink nav ul{
   gap:20px;
 }
 
+/* =========================
+   HIDE ON SCROLL (optional)
+========================= */
+
 header.hide{
   transform: translateY(-100%);
 }
 
-/* use safe spacing */
+/* =========================
+   BODY OFFSET (fixed header fix)
+========================= */
+
 body{
   padding-top: 140px;
 }
 
+/* =========================
+   MOBILE FIX
+========================= */
+
 @media(max-width:768px){
+
+  nav{
+    flex-direction:column;
+    gap:10px;
+    padding:15px 8%;
+  }
+
+  nav ul{
+    flex-direction:column;
+    gap:10px;
+    align-items:center;
+  }
+
   body{
     padding-top: 180px;
   }
-}
-nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:10px 8%;
-}
 
-/* LOGO FIX (responsive-safe) */
-.logo{
-  font-family:'Playfair Display', serif;
-  color:#f3c16d;
-  font-size: clamp(32px, 4vw, 80px);
-  line-height:1;
+  header.shrink .logo{
+    font-size: 36px;
+  }
 }
 
 /* MENU */
