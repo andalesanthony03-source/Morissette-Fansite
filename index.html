@@ -606,7 +606,7 @@ const soundBtn = document.getElementById("soundBtn");
 soundBtn.addEventListener("click", () => {
 
   video.muted = false;
-  video.volume = 0.2;
+  video.volume = 0.7;
 
   video.play();
 
@@ -614,7 +614,18 @@ soundBtn.addEventListener("click", () => {
 
 });
 
-/* DOUBLE TAP TO SKIP */
+/* FUNCTION TO STOP VIDEO */
+
+function closePreloader(){
+
+  video.pause();
+
+  video.currentTime = 0;
+
+  preloader.style.display = "none";
+}
+
+/* DOUBLE TAP MOBILE */
 
 let lastTap = 0;
 
@@ -624,23 +635,23 @@ preloader.addEventListener("touchend", function(){
   const tapLength = currentTime - lastTap;
 
   if(tapLength < 300 && tapLength > 0){
-    preloader.style.display = "none";
+    closePreloader();
   }
 
   lastTap = currentTime;
 
 });
 
-/* DESKTOP DOUBLE CLICK */
+/* DOUBLE CLICK DESKTOP */
 
 preloader.addEventListener("dblclick", () => {
-  preloader.style.display = "none";
+  closePreloader();
 });
 
 /* AUTO HIDE WHEN VIDEO ENDS */
 
 video.addEventListener("ended", () => {
-  preloader.style.display = "none";
+  closePreloader();
 });
 
 </script>
