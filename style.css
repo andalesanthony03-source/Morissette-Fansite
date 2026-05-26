@@ -524,3 +524,214 @@ img{
     gap:8px;
   }
 }
+
+
+
+
+
+
+
+/* =========================
+   INFO SECTION (MATCH HIGHLIGHTS)
+========================= */
+
+.info-section{
+  padding:100px 8%;
+}
+
+.info-section h2{
+  text-align:center;
+  margin-bottom:50px;
+  font-size:2.5rem;
+  color:#f3c16d;
+}
+
+/* =========================
+   GRID (SAME AS card-container)
+========================= */
+
+.card-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+  gap:25px;
+
+  max-width:1200px;
+  margin:auto;
+}
+
+/* CARD */
+.card{
+  width:100%;
+}
+
+/* MOBILE */
+@media (max-width:768px){
+
+  .card-container{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+}
+
+/* =========================
+   CARD BASE (EXACT MATCH)
+========================= */
+
+.card{
+  background:#1e0a28;
+  padding:20px;
+  border-radius:20px;
+
+  transition:0.3s ease;
+}
+
+/* hover effect (same as highlights) */
+.card:hover{
+  transform: translateY(-5px);
+}
+
+/* =========================
+   BUTTON INSIDE CARD
+========================= */
+
+.accordion-btn{
+  width:100%;
+  background:none;
+  border:none;
+
+  color:#f3c16d;
+  font-size:1.1rem;
+  font-weight:600;
+
+  cursor:pointer;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  margin-bottom:10px;
+}
+
+/* plus/minus icon */
+.accordion-btn::after{
+  content:"+";
+  transition:0.3s ease;
+}
+
+.card.active .accordion-btn::after{
+  content:"–";
+}
+
+.card-container{
+  align-items:start;
+}
+/* =========================
+   COLLAPSIBLE CONTENT
+========================= */
+
+.accordion-content{
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  transition:0.3s ease;
+}
+
+/* ACTIVE STATE */
+.timeline-card.active .accordion-content{
+  max-height:180px;
+  overflow-y:auto;
+  opacity:0.85;
+  margin-top:15px;
+  padding-right:5px;
+}
+
+/* scrollbar styling (optional but clean) */
+.card.active .accordion-content::-webkit-scrollbar{
+  width:5px;
+}
+
+.card.active .accordion-content::-webkit-scrollbar-thumb{
+  background:#f3c16d;
+  border-radius:10px;
+}
+
+
+/* =========================
+   COLLAPSIBLE AWARDS
+========================= */
+
+.award-card{
+  background:#1e0a28;
+  padding:20px;
+  border-radius:20px;
+  transition:0.3s ease;
+}
+
+.award-card:hover{
+  transform:translateY(-5px);
+}
+
+/* BUTTON */
+.accordion-btn{
+  width:100%;
+  background:none;
+  border:none;
+
+  color:#f3c16d;
+  font-size:1.1rem;
+  font-weight:600;
+
+  text-align:left;
+  cursor:pointer;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+/* PLUS ICON */
+.accordion-btn::after{
+  content:"+";
+  transition:0.3s ease;
+}
+
+/* ACTIVE STATE */
+.award-card.active .accordion-btn::after{
+  content:"–";
+}
+
+/* CONTENT */
+.accordion-content{
+  max-height:0;
+  overflow:hidden;
+
+  opacity:0;
+  transition:0.3s ease;
+}
+
+/* EXPANDED */
+.award-card.active .accordion-content{
+  max-height:180px;
+  overflow-y:auto;
+  opacity:0.85;
+  margin-top:15px;
+  padding-right:5px;
+}
+
+/* SCROLLBAR */
+.award-card.active .accordion-content::-webkit-scrollbar{
+  width:4px;
+}
+
+.award-card.active .accordion-content::-webkit-scrollbar-thumb{
+  background:#f3c16d;
+  border-radius:10px;
+}
+
+/* TEXT */
+.accordion-content p{
+  margin-bottom:12px;
+  line-height:1.5;
+  font-size:0.95rem;
+}
