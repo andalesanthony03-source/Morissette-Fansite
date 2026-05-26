@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Morissette Music</title>
+
+  <link rel="stylesheet" href="newmusic.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+ <header>
+  <nav>
+    <h1 class="logo">MORISSETTE</h1>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+   <ul class="nav-links">
+
+      <li><a href="#home">Home</a></li>
+
+      <li><a href="#topmusic">Top Music</a></li>
+
+      <li><a href="#originals">Originals</a></li>
+
+      <li><a href="#albums">Albums</a></li>
+
+    </ul>
+
+  </nav>
+</header>
+
+<section class="music-hero" id="home">
+
+  <div class="music-hero-content">
+    <h1>Latest Track</h1>
+    <p>Discover Morissette’s newest release</p>
+  </div>
+
+  <div class="track-card-split">
+
+    <!-- LEFT: COVER IMAGE -->
+    <div class="track-cover">
+      <!-- Spotify Embed (includes cover art automatically) -->
+    <iframe style="border-radius:12px"
+      src="https://open.spotify.com/embed/track/3E3MNqDZuF62vgjqrnbC4h?utm_source=generator"
+      width="100%"
+      height="352"
+      frameborder="0"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy">
+    </iframe>
+    </div>
+
+    <!-- RIGHT: INFO -->
+    <div class="track-info">
+
+      <h2>Stronger Than Before</h2>
+      <p>Jessica Sanchez & Morissette</p>
+      <p>Two powerhouse voices come together as Jessica Sanchez and Morissette release their new collaboration, “Stronger Than Before.</pp>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     SPOTIFY EMBEDS
+========================= -->
+
+<section class="spotify-section" id="topmusic" >
+
+  <div class="section-title" >
+
+    <h2>Morissette's Top Spotify Tracks</h2>
+    <p>Listen directly through Spotify.</p>
+
+  </div>
+
+  <div class="spotify-grid" >
+
+    <div class="spotify-card">
+    <iframe data-testid="embed-iframe" 
+        style="border-radius:12px" 
+        src="https://open.spotify.com/embed/artist/62WbvkXqQGvXQvw74GU3kQ?utm_source=generator" 
+        width="100%" 
+        height="352" 
+        frameBorder="0" 
+        allowfullscreen="" 
+        allow="autoplay; 
+        lipboard-write; 
+        encrypted-media; 
+        fullscreen; 
+        picture-in-picture" 
+        loading="lazy"></iframe>
+
+    </div>
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     ORIGINALS
+========================= -->
+
+<section class="originals" id="originals">
+
+  <div class="section-title">
+
+    <h2>Original Songs</h2>
+    <p>Morissette’s original releases and signature songs.</p>
+
+  </div>
+
+  <div class="originals-grid">
+
+    <div class="originals-card">
+
+       <iframe data-testid="embed-iframe" style="border-radius:12px" 
+       src="https://open.spotify.com/embed/playlist/0TLmq6uu2DHN2MGNh6WtFJ?utm_source=generator" 
+       width="100%" height="352" frameBorder="0" allowfullscreen="" 
+       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+       loading="lazy"></iframe>
+
+    </div>
+
+
+</section>
+
+<!-- =========================
+     ALBUMS
+========================= -->
+
+<section class="albums" id="albums">
+
+  <div class="section-title">
+    <h2>Morissette's Albums</h2>
+    <p>Morissette's album releases all throughout her career.</p>
+  </div>
+
+  <div class="album-grid">
+
+    <!-- ALBUM 1 -->
+    <a href="https://open.spotify.com/album/33zdWHxZoopK5P6VW0JI0V?si=iq3VoZUzRMmXJIOylNxDiw"
+       target="_blank"
+       class="album-card">
+
+      <img src="../Images/Morissette_album.jpg" alt="Album Cover">
+
+      <div class="album-info">
+        <h3>Morisstte</h3>
+      </div>
+
+    </a>
+
+    <!-- ALBUM 2 -->
+    <a href="https://open.spotify.com/album/2WIRN1ZnQfFltvdgF1EZ8j?si=cMgg4KRNS32DFCMs0FPU7w"
+       target="_blank"
+       class="album-card">
+
+      <img src="../Images/SignatureEP.jpeg" alt="Secrets">
+
+      <div class="album-info">
+        <h3>Signature EP</h3>
+        <p></p>
+      </div>
+
+    </a>
+
+       <!-- ALBUM 2 -->
+    <a href="https://open.spotify.com/album/51Xmtohfpo5bDwPEZj8THS?si=1DpZQLt2SAW_TFRg97neXA"
+       target="_blank"
+       class="album-card">
+
+      <img src="../Images/FromTheSea.jpg" alt="Secrets">
+
+      <div class="album-info">
+        <h3>From The Sea EP</h3>
+        <p></p>
+      </div>
+
+    </a>
+
+     <!-- ALBUM 2 -->
+    <a href="https://open.spotify.com/album/7IyA7zjsZEFsudVDrjuyzB?si=w9N2pz--RIKMcIdLGozcHQ"
+       target="_blank"
+       class="album-card">
+
+      <img src="../Images/IWNH.jpg" alt="Secrets">
+
+      <div class="album-info">
+        <h3>If We Never Happened</h3>
+        <p></p>
+      </div>
+
+    </a>
+
+
+    <a href="https://open.spotify.com/album/4I4r4Qe7Upzb9TsL4jL5yn?si=JW0W1aVsTGGRX9elqp7yvQ"
+       target="_blank"
+       class="album-card">
+
+      <img src="../Images/Mat14v1.jpeg" alt="Secrets">
+
+      <div class="album-info">
+        <h3>Morissette at 14 (Voolume 1)</h3>
+        <p></p>
+      </div>
+
+    </a>
+
+       <a href="https://open.spotify.com/album/5qukcd3BPt8a989tdKPjiV?si=FssGuyouRuW4Qt11zqFuiA"
+       target="_blank"
+       class="album-card">
+
+      <img src="../Images/Mat14v2.jpeg" alt="Secrets">
+
+      <div class="album-info">
+        <h3>Morissette at 14 (Voolume 2)</h3>
+        <p></p>
+      </div>
+
+    </a>
+
+
+
+    
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+    <p>
+      Made with love by Stan Morissette.
+    </p>
+  </footer>
+
+<!-- =========================
+     MOBILE MENU SCRIPT
+========================= -->
+<script>
+function toggleMenu(){
+  const nav = document.querySelector(".nav-links");
+  const toggle = document.querySelector(".menu-toggle");
+
+  nav.classList.toggle("show");
+
+  // change icon
+  if(nav.classList.contains("show")){
+    toggle.textContent = "✕";
+  } else {
+    toggle.textContent = "☰";
+  }
+}
+
+// Hide menu when a nav link is clicked (mobile)
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.querySelector(".nav-links").classList.remove("show");
+    document.querySelector(".menu-toggle").textContent = "☰";
+  });
+});
+</script>
+
+</body>
+</html>
