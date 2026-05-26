@@ -28,7 +28,7 @@
   </nav>
 </header>
   <!-- HERO -->
-  <section class="hero" id="home">
+  <section class="hero reveal" id="home">
 
     <div class="hero-text">
       <h2>Vocal Powerhouse.<br>World-Class Performer.</h2>
@@ -52,7 +52,7 @@
   </section>
 
 <!-- HIGHLIGHTS -->
-<section class="highlights" id="performances">
+<section class="highlights reveal" id="performances">
 
   <h2>Latest Highlights</h2>
 
@@ -81,7 +81,7 @@
 
 <section class="info-section">
 
-<section class="timeline-section">
+  <section class="timeline-section reveal" id="timeline">
 
   <h2>Career Timeline</h2>
 
@@ -156,7 +156,7 @@
      COLLAPSIBLE AWARDS
 ========================= -->
 
-<section class="awards" id="awards">
+<section class="awards reveal" id="awards">
 
   <h2>Awards & Achievements</h2>
 
@@ -393,7 +393,7 @@ accordionButtons.forEach(button => {
 
 
 <!-- UPDATES -->
-<section class="updates" id="updates">
+<section class="updates reveal" id="updates">
 
   <h2>Latest Updates</h2>
 
@@ -419,7 +419,7 @@ accordionButtons.forEach(button => {
 </section>
 
  <!-- GALLERY -->
-<section class="gallery" id="gallery">
+<section class="gallery reveal" id="gallery">
 
   <h2>Gallery</h2>
 
@@ -535,6 +535,25 @@ document.querySelectorAll(".nav-links a").forEach(link => {
 });
 </script>
 
+
+
+<script>
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (top < windowHeight - 100) {
+      el.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
+</script>
 
  <!-- FOOTER -->
   <footer>
