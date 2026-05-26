@@ -1,24 +1,70 @@
-/* =========================================================
-   GLOBAL RESET
-========================================================= */
-
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
 }
 
-img{
-  max-width:100%;
-  height:auto;
-  display:block;
-}
-
 body{
   font-family:'Poppins', sans-serif;
   background:#120018;
   color:white;
-  padding-top:140px;
+}
+
+/* =========================
+   PRELOADER VIDEO
+========================= */
+
+#preloader{
+  position:fixed;
+  inset:0;
+  background:black;
+  z-index:9999;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  overflow:hidden;
+}
+
+#preloader video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* SOUND BUTTON */
+
+#soundBtn{
+  position:absolute;
+  bottom:90px;
+
+  padding:12px 24px;
+
+  border:none;
+  border-radius:30px;
+
+  background:#f3c16d;
+  color:#120018;
+
+  font-weight:600;
+  cursor:pointer;
+
+  z-index:10000;
+}
+
+/* SKIP TEXT */
+
+#skipText{
+  position:absolute;
+  bottom:40px;
+
+  color:white;
+  font-size:14px;
+
+  z-index:10000;
+
+  opacity:0.8;
 }
 
 /* =========================================================
@@ -113,20 +159,16 @@ header.shrink .nav-links{
   gap:15px;
 }
 
-/* =========================================================
-   HERO
-========================================================= */
+
+/* HERO */
 
 .hero{
   min-height:100vh;
-
   display:flex;
   align-items:center;
   justify-content:space-between;
-
-  gap:40px;
-
   padding:50px 8%;
+  gap:40px;
 }
 
 .hero-text{
@@ -137,7 +179,6 @@ header.shrink .nav-links{
   font-size:4rem;
   font-family:'Playfair Display', serif;
   color:#f3c16d;
-
   margin-bottom:20px;
 }
 
@@ -147,188 +188,198 @@ header.shrink .nav-links{
 }
 
 .buttons{
+  margin-top:30px;
   display:flex;
   gap:15px;
-
-  margin-top:30px;
 }
 
 .buttons a{
   padding:12px 20px;
-
   border:1px solid #f3c16d;
-  border-radius:30px;
-
   color:#f3c16d;
   text-decoration:none;
+  border-radius:30px;
 }
 
 .hero-image img{
   width:450px;
-
   border-radius:20px;
-
   box-shadow:0 0 40px rgba(243,193,109,0.3);
 }
 
-/* =========================================================
-   SHARED SECTION TITLES
-========================================================= */
 
-.highlights h2,
-.gallery h2,
-.awards h2,
-.updates h2,
-.info-section h2{
-  text-align:center;
 
-  margin-bottom:50px;
+/* =========================
+   HERO MOBILE
+========================= */
 
-  font-size:2.5rem;
-  color:#f3c16d;
+@media (max-width:768px){
+
+  .hero{
+    flex-direction:column;
+    text-align:center;
+    padding:40px 8%;
+    gap:30px;
+  }
+
+  .hero-text h2{
+    font-size:2.2rem;
+  }
+
+  .hero-text p{
+    max-width:100%;
+    margin:auto;
+  }
+
+  .buttons{
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+  .hero-image img{
+    width:100%;
+    max-width:320px;
+  }
+
 }
 
-/* =========================================================
-   HIGHLIGHTS
-========================================================= */
+
+
+
+
+
+
+
+
+
+
+
+/* HIGHLIGHTS */
 
 .highlights{
   padding:100px 8%;
 }
 
-/* =========================================================
-   GALLERY
-========================================================= */
-
-.gallery{
-  padding:60px 8%;
+.highlights h2{
   text-align:center;
+  margin-bottom:50px;
+  font-size:2.5rem;
+  color:#f3c16d;
 }
 
-.slideshow-container{
-  position:relative;
-
-  max-width:900px;
-  margin:auto;
-
-  overflow:hidden;
-  border-radius:20px;
-
-  cursor:pointer;
-}
-
-.slide{
-  display:none;
-}
-
-.slide img{
-  width:100%;
-  border-radius:20px;
-
-  user-select:none;
-}
-
-/* FADE */
-
-.fade{
-  animation:fade 0.5s ease-in-out;
-}
-
-@keyframes fade{
-  from{opacity:0.4;}
-  to{opacity:1;}
-}
-
-/* REMOVE ARROWS */
-
-.prev,
-.next{
-  display:none;
-}
-
-/* DOTS */
-
-.dots-container{
-  text-align:center;
-  margin-top:15px;
-}
-
-.dot{
-  display:inline-block;
-
-  width:12px;
-  height:12px;
-
-  margin:0 5px;
-
-  background:#bbb;
-
-  border-radius:50%;
-
-  cursor:pointer;
-
-  transition:background 0.3s;
-}
-
-.dot.active{
-  background:#f3c16d;
-}
-
-/* =========================================================
-   SHARED GRID
-========================================================= */
-
-.card-container,
-.updates-container{
+.card-container{
   display:grid;
-
-  grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
-
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:25px;
-
-  max-width:1200px;
-  margin:auto;
-
-  align-items:start;
-}
-
-/* =========================================================
-   SHARED CARD
-========================================================= */
-
-.card,
-.award-card,
-.update-card{
-  background:#1e0a28;
-
-  padding:20px;
-
-  border-radius:20px;
-
-  transition:0.3s ease;
 }
 
 .card{
-  text-decoration:none;
-  color:white;
-  display:block;
+  background:#1e0a28;
+  padding:20px;
+  border-radius:20px;
 }
 
-.card:hover,
-.award-card:hover{
-  transform:translateY(-5px);
-}
-
-/* CARD IMAGE */
-
-.card img,
-.award-card img{
+.card img{
   width:100%;
-
   border-radius:15px;
-
   margin-bottom:15px;
 }
+
+.card{
+  text-decoration: none;
+  color: white;
+  display: block;
+  transition: 0.3s ease;
+}
+
+.card:hover{
+  transform: translateY(-5px);
+}
+
+/* GALLERY */
+.gallery{
+  padding: 60px 8%;
+  text-align: center;
+}
+
+.gallery h2{
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.slideshow-container{
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.slide{
+  display: none;
+}
+
+.slide img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+}
+/* Fade Effect */
+.fade{
+  animation: fade 0.5s ease-in-out;
+}
+
+@keyframes fade{
+  from{opacity: .4}
+  to{opacity: 1}
+}
+
+/* Buttons */
+.prev,
+.next{
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 16px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  background: rgba(0,0,0,0.4);
+  border-radius: 50%;
+  user-select: none;
+  transition: 0.3s;
+}
+
+.prev:hover,
+.next:hover{
+  background: rgba(0,0,0,0.7);
+}
+
+.prev{
+  left: 15px;
+}
+
+.next{
+  right: 15px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.slide img{
+  height: 300px;
+}
+
+  .prev,
+  .next{
+    font-size: 18px;
+    padding: 12px;
+  }
+
+}
+
 
 /* =========================================================
    SEE MORE BUTTON
@@ -361,6 +412,54 @@ header.shrink .nav-links{
   background:#d1ad4f;
   transform:scale(1.05);
 }
+
+
+
+/* DOTS */
+
+.dots-container{
+  text-align:center;
+  margin-top:15px;
+}
+
+.dot{
+  display:inline-block;
+
+  width:12px;
+  height:12px;
+
+  margin:0 5px;
+
+  background:#bbb;
+
+  border-radius:50%;
+
+  cursor:pointer;
+
+  transition:background 0.3s;
+}
+
+.dot.active{
+  background:#f3c16d;
+}
+
+/* =========================================================
+   SHARED SECTION TITLES
+========================================================= */
+
+.highlights h2,
+.gallery h2,
+.awards h2,
+.updates h2,
+.info-section h2{
+  text-align:center;
+
+  margin-bottom:50px;
+
+  font-size:2.5rem;
+  color:#f3c16d;
+}
+
 
 /* =========================================================
    AWARDS
@@ -489,15 +588,10 @@ header.shrink .nav-links{
   border-radius:10px;
 }
 
-/* =========================================================
-   FOOTER
-========================================================= */
 
-footer{
-  text-align:center;
-  padding:40px;
-  background:#0b0010;
-}
+
+
+
 /* =========================================================
    TIMELINE + AWARDS UNIFIED STYLE (DESKTOP + MOBILE)
 ========================================================= */
@@ -546,9 +640,13 @@ footer{
     display: none;
   }
 }
-  /* =====================================================
-     NAV FIX
-  ===================================================== */
+  
+
+/* =====================================================
+   MOBILE NAV ONLY
+===================================================== */
+
+@media (max-width:768px){
 
   nav{
     flex-wrap:wrap;
@@ -566,9 +664,11 @@ footer{
     text-align:center;
     gap:15px;
     margin-top:15px;
+
     position:absolute;
     top:100%;
     left:0;
+
     background:#120018;
     padding:20px 0;
   }
@@ -577,50 +677,23 @@ footer{
     display:flex;
   }
 
-  /* =====================================================
-     HERO
-  ===================================================== */
-
-  .hero{
-    flex-direction:column;
-    text-align:center;
-    padding:40px 8%;
-  }
-
-  .hero-text h2{
-    font-size:2.2rem;
-  }
-
-  .hero-image img{
-    width:100%;
-    max-width:320px;
-  }
-
-  .buttons{
-    justify-content:center;
-    flex-wrap:wrap;
-  }
-
-  /* =====================================================
-     GRID FIX
-  ===================================================== */
-
-  .card-container,
-  .updates-container{
-    grid-template-columns:1fr;
-    gap:20px;
-  }
-
-  .highlights{
-    padding:70px 5%;
-  }
-
-  .highlights h2{
-    font-size:2rem;
-  }
+}
 
 
-  /* FOOTER */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FOOTER */
 
 footer{
   text-align:center;
@@ -628,73 +701,28 @@ footer{
   background:#0b0010;
 }
 
-html, body {
-  height: 100%;
-}
 
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
 
-main {
-  flex: 1;
-}
 
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
 
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
+
+
+
+
 
 /* =========================================================
-   PAGE LOAD ANIMATIONS
+   REVEAL ANIMATION
 ========================================================= */
 
-body {
-  opacity: 0;
-  animation: pageFadeIn 0.8s ease forwards;
+.reveal{
+  opacity:0;
+  transform:translateY(120px);
+  transition:1.4s all ease;
 }
 
-@keyframes pageFadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-/* HERO ANIMATION */
-.hero-text {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: slideUp 1s ease forwards;
-  animation-delay: 0.3s;
-}
-
-.hero-image {
-  opacity: 0;
-  transform: scale(0.95);
-  animation: zoomIn 1s ease forwards;
-  animation-delay: 0.5s;
-}
-
-@keyframes slideUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes zoomIn {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
 }
 
 /* NAV ANIMATION */
