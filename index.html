@@ -13,6 +13,23 @@
   
 <body>
 
+ 
+<!-- PRELOADER -->
+<div id="preloader">
+
+  <video id="introVideo" autoplay muted playsinline>
+    <source src="DiamanteNMDefender.mp4" type="video/mp4">
+  </video>
+
+  <!-- SOUND BUTTON -->
+  <button id="soundBtn">Experience Morissette🔊</button>
+
+  <!-- SKIP -->
+  <div id="skipText">Double tap to skip</div>
+
+</div>
+
+
   <header>
   <nav>
     <h1 class="logo">MORISSETTE</h1>
@@ -538,22 +555,96 @@ document.querySelectorAll(".nav-links a").forEach(link => {
 
 
 <script>
-const reveals = document.querySelectorAll(".reveal");
+function reveal(){
 
-function revealOnScroll() {
-  reveals.forEach(el => {
-    const top = el.getBoundingClientRect().top;
+  const reveals = document.querySelectorAll(".reveal");
+
+  reveals.forEach(reveal => {
+
     const windowHeight = window.innerHeight;
+    const elementTop = reveal.getBoundingClientRect().top;
+    const elementBottom = reveal.getBoundingClientRect().bottom;
 
-    if (top < windowHeight - 100) {
-      el.classList.add("active");
+    const visible = 120;
+
+    if(
+      elementTop < windowHeight - visible &&
+      elementBottom > visible
+    ){
+      reveal.classList.add("active");
+    } else {
+      reveal.classList.remove("active");
     }
+
   });
+
 }
 
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
+window.addEventListener("scroll", reveal);
+window.addEventListener("load", reveal);
 </script>
+
+<script>
+history.scrollRestoration = "manual";
+
+window.onload = () => {
+  window.scrollTo(0,0);
+};
+</script>
+
+
+
+
+<script>
+
+const preloader = document.getElementById("preloader");
+const video = document.getElementById("introVideo");
+const soundBtn = document.getElementById("soundBtn");
+
+/* ENABLE SOUND */
+
+soundBtn.addEventListener("click", () => {
+
+  video.muted = false;
+  video.volume = 0.2;
+
+  video.play();
+
+  soundBtn.style.display = "none";
+
+});
+
+/* DOUBLE TAP TO SKIP */
+
+let lastTap = 0;
+
+preloader.addEventListener("touchend", function(){
+
+  const currentTime = new Date().getTime();
+  const tapLength = currentTime - lastTap;
+
+  if(tapLength < 300 && tapLength > 0){
+    preloader.style.display = "none";
+  }
+
+  lastTap = currentTime;
+
+});
+
+/* DESKTOP DOUBLE CLICK */
+
+preloader.addEventListener("dblclick", () => {
+  preloader.style.display = "none";
+});
+
+/* AUTO HIDE WHEN VIDEO ENDS */
+
+video.addEventListener("ended", () => {
+  preloader.style.display = "none";
+});
+
+</script>
+
 
  <!-- FOOTER -->
   <footer>
