@@ -45,7 +45,7 @@
   </nav>
 </header>
   <!-- HERO -->
-  <section class="hero reveal" id="home">
+  <section class="hero" id="home">
 
     <div class="hero-text">
       <h2>Vocal Powerhouse.<br>World-Class Performer.</h2>
@@ -606,7 +606,7 @@ const soundBtn = document.getElementById("soundBtn");
 soundBtn.addEventListener("click", () => {
 
   video.muted = false;
-  video.volume = 0.7;
+  video.volume = 0.2;
 
   video.play();
 
@@ -623,6 +623,7 @@ function closePreloader(){
   video.currentTime = 0;
 
   preloader.style.display = "none";
+  document.querySelector(".hero").classList.add("show");
 }
 
 /* DOUBLE TAP MOBILE */
