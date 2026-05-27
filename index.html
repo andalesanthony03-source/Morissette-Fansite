@@ -45,6 +45,8 @@
 
   </nav>
 </header>
+
+
   <!-- HERO -->
   <section class="hero" id="home">
 
@@ -70,6 +72,9 @@
   
 
   </section>
+
+
+
 
 <!-- HIGHLIGHTS -->
 <section class="highlights reveal" id="performances">
@@ -98,9 +103,11 @@
 </section>
 
 
-
+  
+<!-- INFO -->
 <section class="info-section">
 
+  
   <section class="timeline-section reveal" id="timeline">
 
   <h2>Career Timeline</h2>
@@ -108,7 +115,7 @@
   <div class="timeline-container">
 
     <!-- EARLY CAREER -->
-    <div class="card timeline-card">
+    <div class="card timeline-card accordion-card">
 
       <button class="accordion-btn">Early Career (2007–2012)</button>
 
@@ -123,8 +130,9 @@
 
     </div>
 
+
     <!-- BREAKTHROUGH -->
-    <div class="card timeline-card">
+    <div class="card timeline-card accordion-card">
 
       <button class="accordion-btn">Breakthrough (2013–2014)</button>
 
@@ -139,7 +147,7 @@
     </div>
 
     <!-- RISE -->
-    <div class="card timeline-card">
+    <div class="card timeline-card accordion-card">
 
       <button class="accordion-btn">Rise to Fame (2015–2019)</button>
 
@@ -154,7 +162,7 @@
     </div>
 
     <!-- MODERN ERA -->
-    <div class="card timeline-card">
+    <div class="card timeline-card accordion-card">
 
       <button class="accordion-btn">Modern Era (2020–Present)</button>
 
@@ -171,8 +179,8 @@
 
   </div>
 
-</section>
-<!-- =========================
+
+  <!-- =========================
      COLLAPSIBLE AWARDS
 ========================= -->
 
@@ -183,7 +191,7 @@
   <div class="awards-container">
 
     <!-- 2014 -->
-    <div class="card award-card">
+    <div class="card award-card accordion-card">
 
       <button class="accordion-btn">
         2014
@@ -202,7 +210,7 @@
     </div>
 
     <!-- 2015 -->
-    <div class="card award-card">
+    <div class="card award-card accordion-card">
 
       <button class="accordion-btn">
         2015
@@ -221,7 +229,7 @@
     </div>
 
     <!-- 2017 -->
-    <div class="card award-card">
+    <div class="card award-card accordion-card">
 
       <button class="accordion-btn">
         2017
@@ -240,7 +248,7 @@
     </div>
 
     <!-- 2018 -->
-    <div class="card award-card">
+    <div class="card award-card accordion-card">
 
       <button class="accordion-btn">
         2018
@@ -263,7 +271,7 @@
     </div>
 
     <!-- 2019 -->
-    <div class="card award-card">
+    <div class="card award-card accordion-card">
 
       <button class="accordion-btn">
         2019
@@ -282,7 +290,7 @@
     </div>
 
     <!-- 2021 -->
-    <div class="card award-card">
+    <div class="card award-card accordion-card">
 
       <button class="accordion-btn">
         2021
@@ -302,7 +310,7 @@
     </div>
 
     <!-- 2022 -->
-    <div class="card award-card">
+    <div class="card award-card accordion-card">
 
       <button class="accordion-btn">
         2022
@@ -322,7 +330,7 @@
     </div>
 
     <!-- 2023 -->
-    <div class="card award-card">
+    <div class="card award-card accordion-card">
 
       <button class="accordion-btn">
         2023
@@ -342,7 +350,7 @@
     </div>
 
     <!-- 2024 -->
-    <div class="card award-card">
+    <div class="card award-card accordion-card">
 
       <button class="accordion-btn">
         2024
@@ -357,7 +365,7 @@
     </div>
 
     <!-- 2025 -->
-    <div class="card award-card">
+    <div class="card award-card accordion-card">
 
       <button class="accordion-btn">
         2025
@@ -376,6 +384,9 @@
 
 </section>
 
+</section>
+</section>
+
 
 <!-- =========================
      SINGLE OPEN ACCORDION
@@ -383,31 +394,7 @@
 
 <script>
 
-/* ALL ACCORDION BUTTONS */
-const accordionButtons = document.querySelectorAll(".accordion-btn");
 
-accordionButtons.forEach(button => {
-
-  button.addEventListener("click", () => {
-
-    /* parent card */
-    const currentCard = button.closest(".card");
-
-    /* close all OTHER cards */
-    document.querySelectorAll(".card").forEach(card => {
-
-      if(card !== currentCard){
-        card.classList.remove("active");
-      }
-
-    });
-
-    /* toggle current */
-    currentCard.classList.toggle("active");
-
-  });
-
-});
 
 </script>
 
@@ -436,7 +423,7 @@ accordionButtons.forEach(button => {
 
   </div>
 
-</section>
+</section>  -->
 
  <!-- GALLERY -->
 <section class="gallery reveal" id="gallery">
@@ -445,7 +432,9 @@ accordionButtons.forEach(button => {
 
   <div class="slideshow-container">
 
-    <div class="slide fade">
+  <div class="slides-wrapper">
+
+    <div class="slide active fade">
       <img src="Images/Phoenix1.jpg" alt="">
     </div>
 
@@ -461,61 +450,20 @@ accordionButtons.forEach(button => {
       <img src="Images/Phoenix4.jpg" alt="">
     </div>
 
+  </div>
+
+</div>
+
+
 <div class="dots-container">
   <span class="dot" data-position="first"></span>
   <span class="dot" data-position="middle"></span>
   <span class="dot" data-position="last"></span>
 </div>
 
-  </div>
 
-  <script>
-let currentSlide = 0;
-const slides = document.querySelectorAll('.slide');
-const dots = document.querySelectorAll('.dot');
-const totalSlides = slides.length;
 
-function showSlide(index) {
-  // show only current slide
-  slides.forEach((slide, i) => {
-    slide.style.display = (i === index) ? 'block' : 'none';
-    slide.classList.add('fade');
-  });
 
-  // update 3-dot indicator
-  if (index === 0) {
-    dots[0].classList.add('active');
-    dots[1].classList.remove('active');
-    dots[2].classList.remove('active');
-  } else if (index === totalSlides - 1) {
-    dots[0].classList.remove('active');
-    dots[1].classList.remove('active');
-    dots[2].classList.add('active');
-  } else {
-    dots[0].classList.remove('active');
-    dots[1].classList.add('active');
-    dots[2].classList.remove('active');
-  }
-}
-
-// initial display
-showSlide(currentSlide);
-
-// tap/click navigation
-const container = document.querySelector('.slideshow-container');
-container.addEventListener('click', e => {
-  const clickX = e.clientX;
-  const mid = container.getBoundingClientRect().left + container.offsetWidth / 2;
-
-  if (clickX < mid) {
-    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-  } else {
-    currentSlide = (currentSlide + 1) % totalSlides;
-  }
-
-  showSlide(currentSlide);
-});
-</script>
 
 <!-- See More Button -->
 <div class="see-more-container">
@@ -525,140 +473,8 @@ container.addEventListener('click', e => {
 
 </section>
 
+<script src="script.js"></script>
 
-  
- 
-
-
-
-<script>
-function toggleMenu(){
-  const nav = document.querySelector(".nav-links");
-  const toggle = document.querySelector(".menu-toggle");
-
-  nav.classList.toggle("show");
-
-  // change icon
-  if(nav.classList.contains("show")){
-    toggle.textContent = "✕";
-  } else {
-    toggle.textContent = "☰";
-  }
-}
-
-// Hide menu when a nav link is clicked (mobile)
-document.querySelectorAll(".nav-links a").forEach(link => {
-  link.addEventListener("click", () => {
-    document.querySelector(".nav-links").classList.remove("show");
-    document.querySelector(".menu-toggle").textContent = "☰";
-  });
-});
-</script>
-
-
-
-<script>
-function reveal(){
-
-  const reveals = document.querySelectorAll(".reveal");
-
-  reveals.forEach(reveal => {
-
-    const windowHeight = window.innerHeight;
-    const elementTop = reveal.getBoundingClientRect().top;
-    const elementBottom = reveal.getBoundingClientRect().bottom;
-
-    const visible = 120;
-
-    if(
-      elementTop < windowHeight - visible &&
-      elementBottom > visible
-    ){
-      reveal.classList.add("active");
-    } else {
-      reveal.classList.remove("active");
-    }
-
-  });
-
-}
-
-window.addEventListener("scroll", reveal);
-window.addEventListener("load", reveal);
-</script>
-
-<script>
-history.scrollRestoration = "manual";
-
-window.onload = () => {
-  window.scrollTo(0,0);
-};
-</script>
-
-
-
-
-<script>
-
-const preloader = document.getElementById("preloader");
-const video = document.getElementById("introVideo");
-const soundBtn = document.getElementById("soundBtn");
-
-/* ENABLE SOUND */
-
-soundBtn.addEventListener("click", () => {
-
-  video.muted = false;
-  video.volume = 0.2;
-
-  video.play();
-
-  soundBtn.style.display = "none";
-
-});
-
-/* FUNCTION TO STOP VIDEO */
-
-function closePreloader(){
-
-  video.pause();
-
-  video.currentTime = 0;
-
-  preloader.style.display = "none";
-  document.querySelector(".hero").classList.add("show");
-}
-
-/* DOUBLE TAP MOBILE */
-
-let lastTap = 0;
-
-preloader.addEventListener("touchend", function(){
-
-  const currentTime = new Date().getTime();
-  const tapLength = currentTime - lastTap;
-
-  if(tapLength < 300 && tapLength > 0){
-    closePreloader();
-  }
-
-  lastTap = currentTime;
-
-});
-
-/* DOUBLE CLICK DESKTOP */
-
-preloader.addEventListener("dblclick", () => {
-  closePreloader();
-});
-
-/* AUTO HIDE WHEN VIDEO ENDS */
-
-video.addEventListener("ended", () => {
-  closePreloader();
-});
-
-</script>
 
 
  <!-- FOOTER -->
