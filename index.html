@@ -1,906 +1,490 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Morissette Fan Site</title>
 
-body{
-  font-family:'Poppins', sans-serif;
-  background:#120018;
-  color:white;
-}
+  <link rel="stylesheet" href="style.css">
 
-
-
-
-/* =========================
-   PRELOADER VIDEO
-========================= */
-
-#preloader{
-  position:fixed;
-  inset:0;
-  background:black;
-  z-index:9999;
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
-
-  overflow:hidden;
-}
-
-#preloader video{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-/* SOUND BUTTON */
-
-#soundBtn{
-  position:absolute;
-  bottom:90px;
-
-  padding:12px 24px;
-
-  border:none;
-  border-radius:30px;
-
-  background:#f3c16d;
-  color:#120018;
-
-  font-weight:600;
-  cursor:pointer;
-
-  z-index:10000;
-}
-
-/* SKIP TEXT */
-
-#skipText{
-  position:absolute;
-  bottom:40px;
-
-  color:white;
-  font-size:14px;
-
-  z-index:10000;
-
-  opacity:0.8;
-}
-
-/* =========================================================
-   NAVBAR
-========================================================= */
-
-header{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:1000;
-  background:#120018;
-  transition:0.3s ease;
-}
-
-nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-
-  padding:20px 8%;
-
-  transition:0.3s ease;
-
-  position:relative;
-}
-
-/* LOGO */
-
-.logo{
-  font-family:'Playfair Display', serif;
-  color:#f3c16d;
-
-  font-size:clamp(32px, 4vw, 80px);
-
-  line-height:1;
-
-  transition:0.3s ease;
-}
-
-/* NAV LINKS */
-
-.nav-links{
-  display:flex;
-  align-items:center;
-  gap:30px;
-
-  list-style:none;
-}
-
-/* LINKS */
-
-nav a{
-  text-decoration:none;
-  color:white;
-  transition:0.3s ease;
-}
-
-nav a:hover{
-  color:#f3c16d;
-}
-
-/* HAMBURGER */
-
-.menu-toggle{
-  display:none;
-
-  font-size:32px;
-  color:#f3c16d;
-
-  cursor:pointer;
-
-  flex-shrink:0;
-  order:2;
-
-  position:relative;
-  z-index:2000;
-}
-
-/* SHRINK EFFECT */
-
-header.shrink nav{
-  padding:10px 8%;
-}
-
-header.shrink .logo{
-  font-size:40px;
-}
-
-header.shrink .nav-links{
-  gap:15px;
-}
-
-
-/* HERO */
-
-.hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:50px 8%;
-  gap:40px;
-}
-
-.hero-text {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.hero-text h2{
-  font-size:4rem;
-  font-family:'Playfair Display', serif;
-  color:#f3c16d;
-  margin-bottom:20px;
-}
-
-.hero-text p{
-  max-width:500px;
-  line-height:1.8;
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
   
-}
+<body>
 
-.buttons{
-  margin-top:20px;
-  display:flex;
-  gap:15px;
-}
-
-.buttons a{
-  padding:12px 20px;
-  color:#f3c16d;
-  text-decoration:none;
-  border-radius:30px;
-}
-
-.hero-image img{
-  width:450px;
-  border-radius:20px;
-  box-shadow:0 0 40px rgba(243,193,109,0.3);
-  margin-top: 20px;
-}
-
-.btn {
-  width: 50px;
-  height: 50px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-
-  color: #f3c16d; /* ICON COLOR */
-  font-size: 50px;
-
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-/* IMPORTANT: force icon color */
-.btn i {
-  color: #f3c16d;
-}
-
-.btn:hover {
-  transform: scale(1.1);
-  background: rgba(243, 193, 109, 0.12);
-  box-shadow: 0 0 15px rgba(243, 193, 109, 0.4);
-}
-
-
-
-
-/* HERO HIDDEN STATE */
-.hero{
-  opacity:0;
-  transform:translateY(20px);
-  transition:all 1.2s ease;
-}
-
-/* HERO SHOW STATE (after preloader) */
-.hero.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-
-
-/* =========================
-   HERO MOBILE
-========================= */
-
-@media (max-width:768px){
-
-  .hero{
-    flex-direction:column;
-    text-align:center;
-    padding:40px 8%;
-    gap:30px;
-  }
-
-  .hero-text h2{
-    font-size:2.2rem;
-  }
-
-  .hero-text p{
-    max-width:100%;
-    margin:auto;
-  }
-
-  .buttons{
-    justify-content:center;
-    flex-wrap:wrap;
-  }
-
-  .hero-image img{
-    width:100%;
-    max-width:320px;
-  }
-
- .hero {
-    display: flex;
-    flex-direction: column; /* IMPORTANT */
-    align-items: center;
-    text-align: center;
-    gap: 25px;
-  }
-
-  .hero-image {
-    order: 1;
-  }
-
-  .hero-text {
-    order: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .buttons {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .hero-image img {
-    width: 100%;
-    max-width: 320px;
-  }
-}
-
-
-
-
-
-
-
-
-/* =========================================================
-   UPDATES
-========================================================= */
-
-.updates{
-  padding:100px 8%;
-  text-align:center;
-}
-
-.update-card{
-  text-align:left;
-  
  
-}
-
-.update-card h3{
-  color:#f3c16d;
-  margin-bottom:10px;
-}
-
-
-.update-card p{
-  line-height:1.6;
-}
-
-.update-card {
-  margin-bottom:15px;
-    background:#1e0a28;
-  padding:20px;
-  border-radius:20px;
-  transition: 0.3s ease;
- 
-}
-
-
-.update-card:hover{
-  transform: translateY(-5px);
-}
-
-
-/* HIGHLIGHTS */
-
-.highlights{
-  padding:100px 8%;
-}
-
-.highlights h2{
-  text-align:center;
-  margin-bottom:50px;
-  font-size:2.5rem;
-  color:#f3c16d;
-}
-
-.card-container{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-}
-
-
-.card{
-  background:#1e0a28;
-  padding:20px;
-  border-radius:20px;
-}
-
-.card img{
-  width:100%;
-  border-radius:15px;
-  margin-bottom:15px;
-}
-
-
-.card{
-  text-decoration: none;
-  color: white;
-  display: block;
-  transition: 0.3s ease;
-}
-
-
-.card:hover{
-  transform: translateY(-5px);
-}
-
-/* GALLERY */
-.gallery{
-  padding: 100px 8%;
-  text-align: center;
-}
-
-.gallery h2{
-  font-size: 2rem;
-  margin-bottom: 30px;
-}
-
-/* =========================
-   GALLERY
-========================= */
-
-.slideshow-container{
-  position:relative;
-
-  max-width:1000px;
-  height:500px;
-
-  margin:auto;
-
-  overflow:hidden;
-}
-
-/* SLIDES */
-.slide{
-  position:absolute;
-
-  top:50%;
-  left:50%;
-
-  width:70%;
-
-  opacity:0;
-  transform:translate(-50%, -50%) scale(0.8);
-
-  transition:0.5s ease;
-
-  z-index:1;
-}
-
-/* ACTIVE CENTER */
-.slide.active{
-  opacity:1;
-  transform:translate(-50%, -50%) scale(1);
-
-  z-index:3;
-}
-
-/* LEFT PREVIEW */
-.slide.prev{
-  opacity:0.35;
-
-  transform:
-    translate(-120%, -50%)
-    scale(0.85);
-
-  z-index:2;
-}
-
-/* RIGHT PREVIEW */
-.slide.next{
-  opacity:0.35;
-
-  transform:
-    translate(20%, -50%)
-    scale(0.85);
-
-  z-index:2;
-}
-
-/* IMAGE */
-.slide img{
-  width:100%;
-  height:500px;
-
-  object-fit:cover;
-
-  border-radius:20px;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-
-  .slideshow-container{
-    height:320px;
-  }
-
-  .slide{
-    width:85%;
-  }
-
-  .slide img{
-    height:320px;
-  }
-
-}
-
-/* Buttons */
-/* LEFT PREVIEW */
-.slide.prev{
-  opacity:0.35;
-
-  transform:
-    translate(-85%, -50%)
-    scale(0.85);
-
-  z-index:2;
-}
-
-/* RIGHT PREVIEW */
-.slide.next{
-  opacity:0.35;
-
-  transform:
-    translate(-15%, -50%)
-    scale(0.85);
-
-  z-index:2;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-
-.slide img{
-  height: 300px;
-}
-
-  .prev,
-  .next{
-    font-size: 18px;
-    padding: 12px;
-  }
-
-}
-
-
-/* =========================================================
-   SEE MORE BUTTON
-========================================================= */
-
-.see-more-container{
-  margin-top:30px;
-  text-align:center;
-}
-
-.see-more-btn{
-  display:inline-block;
-
-  padding:12px 30px;
-
-  font-size:1rem;
-
-  color:#120018;
-  background:#f3c16d;
-
-  border:none;
-  border-radius:25px;
-
-  text-decoration:none;
-
-  transition:0.3s ease;
-}
-
-.see-more-btn:hover{
-  background:#d1ad4f;
-  transform:scale(1.05);
-}
-
-
-
-/* DOTS */
-
-.dots-container{
-  text-align:center;
-  margin-top:15px;
-}
-
-.dot{
-  display:inline-block;
-
-  width:12px;
-  height:12px;
-
-  margin:0 5px;
-
-  background:#bbb;
-
-  border-radius:50%;
-
-  cursor:pointer;
-
-  transition:background 0.3s;
-}
-
-.dot.active{
-  background:#f3c16d;
-}
-
-/* =========================================================
-   SHARED SECTION TITLES
-========================================================= */
-
-.highlights h2,
-.gallery h2,
-.awards h2,
-.updates h2,
-.info-section h2{
-  text-align:center;
-   padding:80px 8%;
-  font-size:2.5rem;
-  color:#f3c16d;
-}
-
-
-
-/* =========================================================
-   AWARDS
-========================================================= */
-
-
-
-.award-card h3{
-  color:#f3c16d;
-  margin-bottom:10px;
-}
-
-
-/* =========================================================
-   INFO SECTION / ACCORDION
-========================================================= */
-
-.info-section{
-  padding:100px 8%;
-}
-
-/* ACCORDION BUTTON */
-
-.accordion-btn{
-  width:100%;
-
-  background:none;
-  border:none;
-
-  color:#f3c16d;
-
-  font-size:1.5rem;
-  font-weight:600;
-
-  text-align: center;
-
-  cursor:pointer;
-
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-
-  margin-bottom:10px;
-}
-
-/* PLUS / MINUS */
-
-.accordion-btn::after{
-  content:"";
-  transition:0.3s ease;
-}
-
-.card.active .accordion-btn::after,
-.award-card.active .accordion-btn::after{
-  content:"";
-}
-
-/* CONTENT */
-
-.accordion-content{
-  max-height:0;
-
-  overflow:hidden;
-
-  opacity:0;
-
- transition:
-  max-height 0.4s ease,
-  opacity 0.3s ease;
-}
-
-/* ACTIVE */
-
-.timeline-card.active .accordion-content,
-.award-card.active .accordion-content{
-    max-height:300px;
-
-  opacity:0.85;
-
-  margin-top:15px;
-
-  overflow:hidden;
-}
-
-
-
-
-
-/* TEXT */
-
-.accordion-content p{
-  margin-bottom:12px;
-
-  line-height:1.5;
-
-  font-size:0.95rem;
-}
-
-/* SCROLLBAR */
-
-.accordion-content::-webkit-scrollbar{
-  width:4px;
-}
-
-.accordion-content::-webkit-scrollbar-thumb{
-  background:#f3c16d;
-  border-radius:10px;
-}
-
-
-
-
-
-/* =========================================================
-   TIMELINE + AWARDS UNIFIED STYLE (DESKTOP + MOBILE)
-========================================================= */
-
-
-.timeline-container,
-.awards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+<!-- PRELOADER -->
+<div id="preloader">
+
+  <video id="introVideo" autoplay muted playsinline>
+    <source src="DiamanteNMDefender.mp4" type="video/mp4">
+  </video>
+
+  <!-- SOUND BUTTON -->
+  <button id="soundBtn">Experience Morissette</button>
+
+  <!-- SKIP -->
+  <div id="skipText">Double tap to skip</div>
+
+</div>
+
+
+  <header>
+  <nav>
+    <h1 class="logo">MORISSETTE</h1>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#performances">Performances</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#updates">Updates</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+    </ul>
+
+  </nav>
+</header>
+
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+
+    <div class="hero-text">
+      <h2>Vocal Powerhouse.<br>World-Class Performer.</h2>
+
+      <p>
+        A fan-made hub dedicated to Morissette’s
+        music, performances, and achievements.
+      </p>
+
+      <div class="buttons">
+         <a href="https://www.youtube.com/@MorissettePH" target="_blank" class="btn youtube"><i class="fa-brands fa-youtube"></i></a>
+         <a href="https://open.spotify.com/artist/62WbvkXqQGvXQvw74GU3kQ" target="_blank" class="btn spotify"><i class="fa-brands fa-spotify"></i></a>
+         <a href="https://www.instagram.com/itsMorissette/" target="_blank" class="btn instagram"><i class="fa-brands fa-instagram"></i></a>
+         <a href="https://www.facebook.com/MorissettePh/" target="_blank" class="btn instagram"><i class="fa-brands fa-facebook"></i></a>
+      </div>
+    </div>
+
+  <div class="hero-image">
+      <img src="Images/hero.jpg" alt="Morissette">
+    </div>
   
 
-  box-sizing: border-box;
-  align-items:start;
-}
-
-.timeline-card,
-.award-card{
-  height:auto;
-}
+  </section>
 
 
-/* IMPORTANT: remove ANY width influence differences */
-.timeline,
-.awards {
-  width: 100%;
-  box-sizing: border-box;
-}
-/* =========================================================
-   MOBILE FIX (SCROLL + SPACING)
-========================================================= */
 
-@media (max-width:768px){
 
-  body{
-    padding-top:110px;
-  }
+<!-- HIGHLIGHTS -->
+<section class="highlights reveal" id="performances">
 
-  .timeline-container,
-  .awards-container {
+  <h2>Latest Highlights</h2>
 
-    grid-template-columns: 1fr; /* stack cards */
+  <div class="card-container">
 
-    max-height: 350px; /* same scroll height */
-    overflow-y: auto;
+    <a href="Highlights/live-performances.html" class="card">
+      <img src="Images/STB.jpeg">
+      <h3>Live Performances</h3>
+    </a>
 
-    padding-right: 6px;
-    scroll-behavior: smooth;
+    <a href="Highlights/new-music.html" class="card">
+      <img src="Images/newmusic.jpeg">
+      <h3>New Music</h3>
+    </a>
 
-    gap: 20px; /* tighter mobile spacing */
+    <a href="Highlights/upcoming-events.html" class="card">
+      <img src="Images/ember.jpg">
+      <h3>Upcoming Events</h3>
+    </a>
 
-    /* hide scrollbar Firefox */
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
+  </div>
 
-  /* hide scrollbar Chrome */
-  .timeline-container::-webkit-scrollbar,
-  .awards-container::-webkit-scrollbar {
-    display: none;
-  }
-}
+</section>
+
+
   
+<!-- INFO -->
+<section class="info-section">
 
-/* =====================================================
-   MOBILE NAV ONLY
-===================================================== */
+  
+  <section class="timeline-section reveal" id="timeline">
 
-@media (max-width:768px){
+  <h2>Career Timeline</h2>
 
-  nav{
-    flex-wrap:wrap;
-    padding:15px 8%;
-  }
+  <div class="timeline-container">
 
-  .menu-toggle{
-    display:block;
-  }
+    <!-- EARLY CAREER -->
+    <div class="card timeline-card accordion-card">
 
-  .nav-links{
-    display:none;
-    width:100%;
-    flex-direction:column;
-    text-align:center;
-    gap:15px;
-    margin-top:15px;
+      <button class="accordion-btn">Early Career (2007–2012)</button>
 
-    position:absolute;
-    top:100%;
-    left:0;
+      <div class="accordion-content">
+        <p>
+          Morissette began her career at a young age, joining TV5’s Talentadong Pinoy at 14
+          and later competing in Star Factor, finishing as first runner-up. She appeared in TV5 shows
+          and recorded early songs. In 2012, she starred in Disney’s Camp Rock stage musical but
+          experienced vocal strain that led to vocal cord nodules.
+        </p>
+      </div>
 
-    background:#120018;
-    padding:20px 0;
-  }
-
-  .nav-links.show{
-    display:flex;
-  }
-
-}
+    </div>
 
 
-/* =========================================================
-   REVEAL ANIMATION
-========================================================= */
+    <!-- BREAKTHROUGH -->
+    <div class="card timeline-card accordion-card">
 
-.reveal{
-  opacity:0;
-  transform:translateY(120px);
-  transition:1.4s all ease;
-}
+      <button class="accordion-btn">Breakthrough (2013–2014)</button>
 
-.reveal.active{
-  opacity:1;
-  transform:translateY(0);
-}
+      <div class="accordion-content">
+        <p>
+          In 2013, she joined The Voice of the Philippines and gained national recognition.
+          She reached the semifinals under Sarah Geronimo’s team. In 2014, she became a regular ASAP performer,
+          recorded theme songs, held her first solo concert, and performed with international artist Jessie J.
+        </p>
+      </div>
 
-/* NAV ANIMATION */
-header {
-  opacity: 0;
-  transform: translateY(-20px);
-  animation: navDrop 0.8s ease forwards;
-}
+    </div>
 
-@keyframes navDrop {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+    <!-- RISE -->
+    <div class="card timeline-card accordion-card">
+
+      <button class="accordion-btn">Rise to Fame (2015–2019)</button>
+
+      <div class="accordion-content">
+        <p>
+          Morissette rose to major fame, releasing her debut album and earning multiple awards.
+          She became known for hit TV and film theme songs, joined major concerts, and became part of
+          the “Birit Queens.” Her performances went viral globally, earning her the title “Asia’s Phoenix.”
+        </p>
+      </div>
+
+    </div>
+
+    <!-- MODERN ERA -->
+    <div class="card timeline-card accordion-card">
+
+      <button class="accordion-btn">Modern Era (2020–Present)</button>
+
+      <div class="accordion-content">
+        <p>
+          From 2020 onward, Morissette focused on songwriting, production, and international work.
+          She released music such as “Love You Still,” “Phoenix,” and her EP Signature.
+          She performed globally, sang at national events, celebrated her 10th anniversary,
+          and recently expanded into film with Song of the Fireflies (2025), earning Best Actress recognition.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
 
 
-/* PAGE LAYOUT */
-html, body {
-  height: 100%;
-}
+  <!-- =========================
+     COLLAPSIBLE AWARDS
+========================= -->
 
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
+<section class="awards reveal" id="awards">
 
-/* MAIN CONTENT WRAPPER */
-main {
-  flex: 1;
-}
+  <h2>Awards & Achievements</h2>
 
-/* FOOTER */
+  <div class="awards-container">
 
-footer{
-  text-align:center;
-  padding:10px;
-   background: #0b0010;
-  color:#f3c16d;
-   
-}
+    <!-- 2014 -->
+    <div class="card award-card accordion-card">
 
+      <button class="accordion-btn">
+        2014
+      </button>
+
+      <div class="accordion-content">
+        <p>
+          Star Awards for Music — New Female Recording Artist of the Year
+        </p>
+
+        <p>
+          MOR Pinoy Music Awards — Best New Artist
+        </p>
+      </div>
+
+    </div>
+
+    <!-- 2015 -->
+    <div class="card award-card accordion-card">
+
+      <button class="accordion-btn">
+        2015
+      </button>
+
+      <div class="accordion-content">
+        <p>
+          NCAF Seal of Excellence Awards — Outstanding Female Performing Artist
+        </p>
+
+        <p>
+          MOR Pinoy Music Awards — Female Artist of the Year
+        </p>
+      </div>
+
+    </div>
+
+    <!-- 2017 -->
+    <div class="card award-card accordion-card">
+
+      <button class="accordion-btn">
+        2017
+      </button>
+
+      <div class="accordion-content">
+        <p>
+          Aliw Awards — Best Collaboration in a Concert
+        </p>
+
+        <p>
+          EdukCircle Awards — Most Influential Concert Performer
+        </p>
+      </div>
+
+    </div>
+
+    <!-- 2018 -->
+    <div class="card award-card accordion-card">
+
+      <button class="accordion-btn">
+        2018
+      </button>
+
+      <div class="accordion-content">
+        <p>
+          Wish 107.5 Music Awards — Wish Female Artist of the Year
+        </p>
+
+        <p>
+          Wishclusive Pop/Ballad Performance Awards
+        </p>
+
+        <p>
+          Viral streaming and performance recognitions
+        </p>
+      </div>
+
+    </div>
+
+    <!-- 2019 -->
+    <div class="card award-card accordion-card">
+
+      <button class="accordion-btn">
+        2019
+      </button>
+
+      <div class="accordion-content">
+        <p>
+          Awit Awards — Best Ballad Recording (“Naririnig Mo Ba”)
+        </p>
+
+        <p>
+          Wish 107.5 Music Awards — Wish Artist of the Year
+        </p>
+      </div>
+
+    </div>
+
+    <!-- 2021 -->
+    <div class="card award-card accordion-card">
+
+      <button class="accordion-btn">
+        2021
+      </button>
+
+      <div class="accordion-content">
+        <p>
+          Star Awards for Music — People’s Choice Award (“Love You Still”)
+        </p>
+
+        <p>
+          Asian Academy Creative Awards — Best Theme Song
+          (“Gusto Ko Nang Bumitaw”)
+        </p>
+      </div>
+
+    </div>
+
+    <!-- 2022 -->
+    <div class="card award-card accordion-card">
+
+      <button class="accordion-btn">
+        2022
+      </button>
+
+      <div class="accordion-content">
+        <p>
+          Star Awards for Music — Female Recording Artist of the Year
+        </p>
+
+        <p>
+          Awit Awards — Best Ballad Recording
+          (“Diyan Ba Sa Langit” with Jason Dy)
+        </p>
+      </div>
+
+    </div>
+
+    <!-- 2023 -->
+    <div class="card award-card accordion-card">
+
+      <button class="accordion-btn">
+        2023
+      </button>
+
+      <div class="accordion-content">
+        <p>
+          Asian Academy Creative Awards — Best Branded Programme
+          (A Night of Wonder – Disney+ Philippines)
+        </p>
+
+        <p>
+          KDR Icon of Music and Philanthropy — Hall of Fame Honor
+        </p>
+      </div>
+
+    </div>
+
+    <!-- 2024 -->
+    <div class="card award-card accordion-card">
+
+      <button class="accordion-btn">
+        2024
+      </button>
+
+      <div class="accordion-content">
+        <p>
+          Billboard Philippines Women in Music — People’s Choice Award
+        </p>
+      </div>
+
+    </div>
+
+    <!-- 2025 -->
+    <div class="card award-card accordion-card">
+
+      <button class="accordion-btn">
+        2025
+      </button>
+
+      <div class="accordion-content">
+        <p>
+          Manila International Film Festival — Best Actress
+          (Song of the Fireflies)
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+</section>
+</section>
+
+
+<!-- =========================
+     SINGLE OPEN ACCORDION
+========================= -->
+
+<script>
+
+
+
+</script>
+
+
+<!-- UPDATES 
+<section class="updates reveal" id="updates">
+
+  <h2>Latest Updates</h2>
+
+  <div class="updates-container">
+
+    <div class="update-card">
+      <h3>New Performance Released</h3>
+      <p>Morissette recently dropped a stunning live performance on YouTube.</p>
+    </div>
+
+    <div class="update-card">
+      <h3>Upcoming Concert</h3>
+      <p>Fans are excited for her upcoming live stage events.</p>
+    </div>
+
+    <div class="update-card">
+      <h3>Music Milestone</h3>
+      <p>Reached millions of streams across Spotify and YouTube.</p>
+    </div>
+
+  </div>
+
+</section>  -->
+
+ <!-- GALLERY -->
+<section class="gallery reveal" id="gallery">
+
+  <h2>Gallery</h2>
+
+  <div class="slideshow-container">
+
+  <div class="slides-wrapper">
+
+    <div class="slide active fade">
+      <img src="Images/Phoenix1.jpg" alt="">
+    </div>
+
+    <div class="slide fade">
+      <img src="Images/Phoenix2.jpg" alt="">
+    </div>
+
+    <div class="slide fade">
+      <img src="Images/Phoenix3.jpg" alt="">
+    </div>
+
+    <div class="slide fade">
+      <img src="Images/Phoenix4.jpg" alt="">
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="dots-container">
+  <span class="dot" data-position="first"></span>
+  <span class="dot" data-position="middle"></span>
+  <span class="dot" data-position="last"></span>
+</div>
+
+
+
+
+
+<!-- See More Button -->
+<div class="see-more-container">
+  <a href="Gallery/photoshoot-collection.html" class="see-more-btn">See More Photoshoots</a>
+</div>
+
+
+</section>
+
+<script src="script.js"></script>
+
+
+
+ <!-- FOOTER -->
+  <footer>
+    <p>
+      Made with love by Stan Morissette.
+    </p>
+  </footer>
+
+
+
+</body>
+</html>
