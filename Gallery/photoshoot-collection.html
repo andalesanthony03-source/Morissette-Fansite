@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Morissette Gallery</title>
+
+  <link rel="stylesheet" href="Phototshoot.css">
+
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+  <nav>
+
+    <h1 class="logo">MORISSETTE</h1>
+
+    <div class="menu-toggle" onclick="toggleMenu()">
+      ☰
+    </div>
+
+    <ul class="nav-links">
+
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="#">Gallery</a></li>
+
+    </ul>
+
+  </nav>
+
+</header>
+
+
+<!-- =========================
+     FEATURED SLIDESHOW
+========================= -->
+
+<section class="featured-gallery">
+
+  <div class="featured-slider"></div>
+  
+  <div class="featured-overlay">
+    <h2>Morissette Gallery</h2>
+
+   <p>
+  An archive of photos capturing
+  performances, eras, and iconic moments.
+</p>
+  </div>
+ 
+
+</section>
+
+
+<!-- =========================
+     ALBUMS
+========================= -->
+
+<section class="albums-section">
+
+  <h2>Collections</h2>
+
+<div class="album-grid"> 
+
+  <!-- PHOENIX -->
+  <div class="album-card" onclick="openAlbum('phoenix')">
+
+    <img src="PhoenixCollection/IMG_20260527_125858_194.jpg">
+
+    <div class="album-info">
+      <h3>Phoenix Collection</h3>
+    </div>
+
+  </div>
+
+
+  <!-- SIGNATURE -->
+  <div class="album-card" onclick="openAlbum('signature')">
+
+    <img src="SignatureCollection/IMG_20260527_125844_451.jpg">
+
+    <div class="album-info">
+      <h3>Signature Era</h3>
+    </div>
+
+  </div>
+
+
+  <!-- ARCHIVE -->
+  <div class="album-card" onclick="openAlbum('archive')">
+
+    <img src="PhotoArchive/IMG_20260527_125952_585.jpg">
+
+    <div class="album-info">
+      <h3>Photo Archive</h3>
+    </div>
+
+  </div>
+
+
+  <!-- CONCERTS -->
+  <div class="album-card" onclick="openAlbum('concerts')">
+
+    <img src="Images/Concerts/1.jpg">
+
+    <div class="album-info">
+      <h3>Concert Collection</h3>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- POPUP MODAL -->
+
+<div class="album-modal" id="albumModal">
+
+  <span class="close-btn" onclick="closeAlbum()">&times;</span>
+
+  <h2 id="albumTitle"></h2>
+
+  <div class="popup-grid" id="popupGrid"></div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <p>
+    Made with love by Stan Morissette.
+  </p>
+
+</footer>
+
+<script src="PhotoScript.js"> </script>
+
+</body>
+</html>
