@@ -1,4 +1,4 @@
-
+//Toggle
 
 function toggleMenu(){
   const nav = document.querySelector(".nav-links");
@@ -68,6 +68,27 @@ const preloader = document.getElementById("preloader");
 const video = document.getElementById("introVideo");
 const soundBtn = document.getElementById("soundBtn");
 
+
+let preloadCount =
+  Number(localStorage.getItem("preloadCount")) || 0;
+
+/* SHOW PRELOADER AGAIN EVERY 2 REFRESHES */
+if(preloadCount >= 1){
+
+  localStorage.setItem("preloadCount", 0);
+
+}else{
+
+  preloader.style.display = "none";
+  document.querySelector(".hero").classList.add("show");
+
+  localStorage.setItem(
+    "preloadCount",
+    preloadCount + 1
+  );
+
+}
+
 /* ENABLE SOUND */
 
 soundBtn.addEventListener("click", () => {
@@ -77,27 +98,64 @@ soundBtn.addEventListener("click", () => {
 
   video.play();
 
-  soundBtn.style.display = "none";
+  soundBtn.textContent = "Skip Intro";
 
 });
 
-/* FUNCTION TO STOP VIDEO */
+/* ========================================
+   PRELOADER CONTROLS
+======================================== */
+
+let introStarted = false;
+
+/* BUTTON */
+
+soundBtn.addEventListener("click", () => {
+
+  /* FIRST CLICK = PLAY WITH SOUND */
+  if(!introStarted){
+
+    video.muted = false;
+    video.volume = 0.2;
+
+    video.play();
+
+    soundBtn.textContent = "Skip Intro";
+    soundBtn.classList.add("skip-mode");
+
+    introStarted = true;
+
+  }
+
+  /* SECOND CLICK = SKIP */
+  else{
+
+    closePreloader();
+
+  }
+
+});
+
+/* CLOSE FUNCTION */
 
 function closePreloader(){
 
   video.pause();
-
   video.currentTime = 0;
 
   preloader.style.display = "none";
-  document.querySelector(".hero").classList.add("show");
+
+  document.querySelector(".hero")
+    .classList.add("show");
 }
 
-/* DOUBLE TAP MOBILE */
+/* ========================================
+   DOUBLE TAP MOBILE
+======================================== */
 
 let lastTap = 0;
 
-preloader.addEventListener("touchend", function(){
+preloader.addEventListener("touchend", (e) => {
 
   const currentTime = new Date().getTime();
   const tapLength = currentTime - lastTap;
@@ -110,17 +168,27 @@ preloader.addEventListener("touchend", function(){
 
 });
 
-/* DOUBLE CLICK DESKTOP */
+/* ========================================
+   DOUBLE CLICK DESKTOP
+======================================== */
 
 preloader.addEventListener("dblclick", () => {
   closePreloader();
 });
 
-/* AUTO HIDE WHEN VIDEO ENDS */
+/* ========================================
+   AUTO CLOSE WHEN VIDEO ENDS
+======================================== */
 
 video.addEventListener("ended", () => {
   closePreloader();
 });
+
+
+
+
+
+
 
 
 //slideshow
