@@ -120,35 +120,27 @@ function toggleMenu(){
 // =========================
 // FEATURED SLIDESHOW
 // =========================
+  const featuredImages = [
+    ...albums.phoenix,
+    ...albums.signature,
+    ...albums.archive,
+    ...albums.concerts
+  ];
 
-// choose album
-const featuredImages = albums.phoenix;
 
-const slider =
-  document.querySelector(".featured-slider");
+const slider = document.querySelector(".featured-slider");
 
-// CREATE SLIDES
 featuredImages.forEach((image, index) => {
 
-  const slide =
-    document.createElement("div");
-
+  const slide = document.createElement("div");
   slide.classList.add("featured-slide");
 
-  if(index === 0){
-    slide.classList.add("active");
-  }
-
-  slide.innerHTML = `
-    <img src="${image}">
-  `;
+  slide.innerHTML = `<img src="${image}">`;
 
   slider.appendChild(slide);
 });
 
-// GET ALL CREATED SLIDES
-const slides =
-  document.querySelectorAll(".featured-slide");
+const slides = document.querySelectorAll(".featured-slide");
 
 let current = 0;
 
@@ -156,10 +148,18 @@ function showSlide(index){
 
   slides.forEach((slide, i) => {
 
-    slide.classList.remove("active");
+    slide.classList.remove("active", "prev", "next");
 
     if(i === index){
       slide.classList.add("active");
+    }
+
+    else if(i === (index - 1 + slides.length) % slides.length){
+      slide.classList.add("prev");
+    }
+
+    else if(i === (index + 1) % slides.length){
+      slide.classList.add("next");
     }
 
   });
@@ -167,15 +167,11 @@ function showSlide(index){
 }
 
 function nextSlide(){
-
-  current =
-    (current + 1) % slides.length;
-
+  current = (current + 1) % slides.length;
   showSlide(current);
-
 }
 
-// AUTO SLIDE
+showSlide(current);
 setInterval(nextSlide, 4000);
 
 
