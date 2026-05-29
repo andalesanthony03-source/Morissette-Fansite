@@ -333,5 +333,61 @@ accordionButtons.forEach(button => {
 
 
 
+// IMAGE DATABASE
+const slideshows = {
 
-//
+  "performance-slideshow": [
+    "Images/STB.jpeg",
+  ],
+
+  "music-slideshow": [
+    "Images/newmusic.jpeg",
+    "Images/AhonMV.jpg",
+  ],
+
+  "events-slideshow": [
+    "Images/ember.jpg",
+    "Images/NTMCover.jpg",
+  ]
+
+};
+
+
+// CREATE SLIDESHOWS
+Object.keys(slideshows).forEach(id => {
+
+  const container = document.getElementById(id);
+
+  const images = slideshows[id];
+
+  images.forEach((src, index) => {
+
+    const img = document.createElement("img");
+
+    img.src = src;
+
+    img.classList.add("highlight-slide");
+
+    if(index === 0){
+      img.classList.add("active");
+    }
+
+    container.appendChild(img);
+
+  });
+
+const slides = container.querySelectorAll(".highlight-slide");
+
+  let current = 0;
+
+  setInterval(() => {
+
+    slides[current].classList.remove("active");
+
+    current = (current + 1) % slides.length;
+
+    slides[current].classList.add("active");
+
+  }, 3000);
+
+});
