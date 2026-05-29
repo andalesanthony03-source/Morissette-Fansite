@@ -5,29 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Live Performances</title>
 
+  <link rel="stylesheet" href="../header.css">
   <link rel="stylesheet" href="highlight.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
-   <header>
+<header>
   <nav>
     <h1 class="logo">MORISSETTE</h1>
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
+      <li><a href="../index.html">Home</a></li>
       <li><a href="#performances">Performances</a></li>
-      <li><a href="#awards">Awards</a></li>
-      <li><a href="#updates">Updates</a></li>
-      <li><a href="#gallery">Gallery</a></li>
+   
     </ul>
 
   </nav>
 </header>
 
 
-
-<section class="performances" id="performances">
+<main class="page-content">
+<section class="performances">
 
   <h2>Morissette Live Performances</h2>
 
@@ -41,20 +41,11 @@
 
 </section>
 
+</main>
 
 
-
-
-
-<script src="LiveScript.js"></script>
-
-
-
-
-
-
-<section class="performance-section">
-  <h2 class="toggle-header" data-target="ember-list">
+<section class="performance-section" id="performances">
+  <h2 class="toggle-btn" data-target="ember-list">
     EMBER: Morissette 15th Anniversary Concert
     <span class="arrow">▼</span>
   </h2>
@@ -62,7 +53,7 @@
 </section>
 
 <section class="performance-section">
-  <h2 class="toggle-header" data-target="signature-list">
+  <h2 class="toggle-btn" data-target="signature-list">
     Signature EP (Music Videos and Lyric Visualizer)
     <span class="arrow">▼</span>
   </h2>
@@ -70,7 +61,7 @@
 </section>
 
 <section class="performance-section">
-  <h2 class="toggle-header" data-target="wishbus-list">
+  <h2 class="toggle-btn" data-target="wishbus-list">
     Wish Bus Performances
     <span class="arrow">▼</span>
   </h2>
@@ -78,12 +69,18 @@
 </section>
 
 <section class="performance-section">
-  <h2 class="toggle-header" data-target="viral-list">
+  <h2 class="toggle-btn" data-target="viral-list">
     Notable and Viral Performances
     <span class="arrow">▼</span>
   </h2>
   <div id="viral-list" class="performance-list collapsible hidden"></div>
 </section>
+
+
+
+
+<script src="LiveScript.js"></script>
+
 
 
  <!-- FOOTER -->
