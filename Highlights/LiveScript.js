@@ -1,3 +1,63 @@
+function toggleMenu(){
+  const nav = document.querySelector(".nav-links");
+  const toggle = document.querySelector(".menu-toggle");
+
+  nav.classList.toggle("show");
+
+  // change icon
+  if(nav.classList.contains("show")){
+    toggle.textContent = "✕";
+  } else {
+    toggle.textContent = "☰";
+  }
+}
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.querySelector(".nav-links").classList.remove("show");
+    document.querySelector(".menu-toggle").textContent = "☰";
+  });
+});
+
+  const button = document.querySelectorAll(".toggle-btn");
+
+  button.forEach(btn => {
+    btn.addEventListener("click", () => {
+
+      const targetId = btn.dataset.target;
+      const target = document.getElementById(targetId);
+
+      if (!target) {
+        console.log("Target not found:", targetId);
+        return;
+      }
+
+      target.classList.toggle("hidden");
+      btn.classList.toggle("active");
+
+    });
+  })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
 const performances = {
 
@@ -222,25 +282,6 @@ renderList("viral-list", performances.viral);
 
 
 
-  const headers = document.querySelectorAll(".toggle-header");
-
-  headers.forEach(header => {
-    header.addEventListener("click", () => {
-
-      const targetId = header.dataset.target;
-      const target = document.getElementById(targetId);
-
-      if (!target) {
-        console.log("Target not found:", targetId);
-        return;
-      }
-
-      target.classList.toggle("hidden");
-      header.classList.toggle("active");
-
-    });
-  })
-
 
 
 /* =========================
@@ -270,9 +311,6 @@ slideshow.addEventListener("touchend", (e) => {
 
 
 });
-
-
-
 
 
 
