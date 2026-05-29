@@ -1,0 +1,173 @@
+/* ========================================
+   GLOBAL NAVBAR
+======================================== */
+
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+
+  background:#120018;
+
+  transition:0.3s ease;
+
+}
+
+nav{
+  position:relative;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:20px 8%;
+
+  transition:0.3s ease;
+}
+
+/* LOGO */
+
+.logo{
+  font-family:'Playfair Display', serif;
+  color:#f3c16d;
+
+  font-size:clamp(32px,4vw,80px);
+  line-height:1;
+
+  transition:0.3s ease;
+}
+
+/* NAV LINKS */
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:30px;
+
+  list-style:none;
+}
+
+/* LINKS */
+
+nav a{
+  text-decoration:none;
+  color:white;
+
+  transition:0.3s ease;
+}
+
+nav a:hover{
+  color:#f3c16d;
+}
+
+/* HAMBURGER */
+
+.menu-toggle{
+  display:none;
+
+  font-size:32px;
+  color:#f3c16d;
+
+  cursor:pointer;
+
+  flex-shrink:0;
+  order:2;
+
+  position:relative;
+  z-index:2000;
+}
+
+/* SHRINK EFFECT */
+
+header.shrink nav{
+  padding:10px 8%;
+}
+
+header.shrink .logo{
+  font-size:40px;
+}
+
+header.shrink .nav-links{
+  gap:15px;
+}
+
+/* MOBILE NAV */
+
+@media(max-width:768px){
+
+  nav{
+    flex-wrap:wrap;
+    padding:15px 8%;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+
+  .nav-links{
+    display:none;
+
+    position:absolute;
+    top:100%;
+    left:0;
+
+    width:100%;
+
+    flex-direction:column;
+    text-align:center;
+    gap:15px;
+
+    margin-top:15px;
+    padding:20px 0;
+
+    background:#120018;
+  }
+
+  .nav-links.show{
+    display:flex;
+  }
+
+}
+
+
+
+
+/* ========================================
+   GLOBAL
+======================================== */
+
+html,
+body{
+  height:100%;
+}
+
+body{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+
+  font-family:'Poppins', sans-serif;
+  background:#120018;
+  color:white;
+}
+
+main{
+  flex:1;
+}
+
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer{
+  padding:10px;
+
+  text-align:center;
+
+  background:#0b0010;
+  color:#f3c16d;
+}
