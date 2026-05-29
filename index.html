@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Morissette Fan Site</title>
+  <title>Morissette Fansite</title>
 
+  <link rel="stylesheet" href="header.css">
   <link rel="stylesheet" href="style.css">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
 <script>
   window.OneSignalDeferred = window.OneSignalDeferred || [];
@@ -20,24 +20,45 @@
     });
   });
 </script>
-  
+
+
 </head>
   
 <body>
 
  
-<!-- PRELOADER -->
 <div id="preloader">
 
+  <!-- VIDEO -->
   <video id="introVideo" autoplay muted playsinline>
     <source src="DiamanteNMDefender.mp4" type="video/mp4">
   </video>
 
-  <!-- SOUND BUTTON -->
-  <button id="soundBtn">Experience Morissette</button>
+  <!-- DARK OVERLAY -->
+  <div class="preloader-overlay"></div>
 
-  <!-- SKIP -->
-  <div id="skipText">Double tap to skip</div>
+  <!-- CONTENT -->
+  <div class="preloader-content">
+
+    <h1 class="preloader-title">
+      MORISSETTE
+    </h1>
+
+    <p class="preloader-subtitle">
+      Asia’s Phoenix
+    </p>
+
+    <!-- SOUND BUTTON -->
+    <button id="soundBtn">
+      Experience the Phoenix
+    </button>
+
+    <!-- SKIP -->
+    <p id="skipText">
+      Double tap anywhere to skip
+    </p>
+
+  </div>
 
 </div>
 
@@ -57,8 +78,9 @@
   </nav>
 </header>
 
+<main class="page-content">
 
-  <!-- HERO -->
+ <!-- HERO -->
   <section class="hero" id="home">
 
     <div class="hero-text">
@@ -77,15 +99,35 @@
       </div>
     </div>
 
-  <div class="hero-image">
+  <div class="hero-image reveal">
       <img src="Images/hero.jpg" alt="Morissette">
     </div>
   
 
   </section>
 
+  <section class="artist-bio reveal">
 
+  <p>
+    <span class="highlight-name">Morissette</span>, hailed as the "<span class="highlight-name">Asia’s Phoenix</span>,” continues to rise as one of the most powerful and transcendent voices of her generation. Her unmatched vocal prowess has not only captured the hearts of millions but has also opened doors for her to collaborate with legendary acts such as A1, alongside other respected names in the music industry. She has also shared the stage with some of today’s biggest pop icons and global superstars, proving time and time again that her voice belongs on the world stage.
+  </p>
 
+  <p>
+    From the Philippines to the global spotlight, Morissette has consistently carried her country with pride. One of her most iconic moments came when she was chosen to perform the official Asia release of “A Whole New World” for Disney’s live-action Aladdin—a testament to her timeless vocal elegance.
+  </p>
+
+  <p>
+    She further solidified her international presence when she represented the Philippines at the Asia Song Festival in Busan, South Korea in 2017 and 2018, making history as the first artist to grace the stage for two consecutive years.
+  </p>
+
+  <p>
+    Her journey has taken her across the world, with sold-out concerts in the USA, Dubai, Canada, Australia, Japan, Thailand, the United Kingdom, Switzerland, Italy, and many more—each stage echoing the same truth: Morissette was born to be heard.
+  </p>
+
+</section>
+
+</main>
+ 
 
 <!-- HIGHLIGHTS -->
 <section class="highlights reveal" id="performances">
@@ -190,12 +232,12 @@
 
   </div>
 
-
+</section>
   <!-- =========================
      COLLAPSIBLE AWARDS
 ========================= -->
 
-<section class="awards reveal" id="awards">
+<section class="awards-section reveal" id="awards">
 
   <h2>Awards & Achievements</h2>
 
@@ -395,7 +437,7 @@
 
 </section>
 
-</section>
+
 </section>
 
 
