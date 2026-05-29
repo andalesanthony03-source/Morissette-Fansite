@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Morissette Fansite</title>
+
+  <link rel="stylesheet" href="../header.css">
+  <link rel="stylesheet" href="events.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+  
+<body>
+
+  <header>
+  <nav>
+    <h1 class="logo">MORISSETTE</h1>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#performances">Performances</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#updates">Updates</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+    </ul>
+
+  </nav>
+</header>
+
+<main class="page-content">
+
+<section class="updates">
+
+  <h2 class="updates-title">Updates & Announcements</h2>
+
+  <div class="updates-container" id="updatesContainer">
+  <!-- JS will inject ONE card -->
+</div>
+
+</section>
+
+
+</main>
+ 
+<section class="upcoming-events">
+
+  <h2 class="section-title">Upcoming Events</h2>
+
+  <div class="events-container" id="eventsContainer">
+    <!-- JS will inject event cards here -->
+  </div>
+
+</section>
+
+<script src="events.js"></script>
+
+ <!-- FOOTER -->
+  <footer>
+    <p>
+      Made with love by Stan Morissette.
+    </p>
+  </footer>
+
+<div class="modal" id="eventModal">
+  
+  <div class="modal-content">
+
+    <span class="close">&times;</span>
+
+    <img id="modalImage" src="" alt="Event image">
+
+    <div class="modal-details">
+      <h2 id="modalTitle"></h2>
+      <p id="modalDate"></p>
+      <p id="modalLocation"></p>
+      <p id="modalDescription"></p>
+      <p id="modalFullDetails"></p>
+
+      <span id="modalStatus" class="status"></span>
+
+      <a id="modalTicket" target="_blank" class="ticket-btn">
+        Buy Tickets
+      </a>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
