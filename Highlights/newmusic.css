@@ -16,7 +16,7 @@ body{
 
 .music-hero,
 .page-content{
-  margin-top:90px;
+  margin-top:50px;
 }
 
 html{
@@ -123,45 +123,42 @@ html{
 ========================= */
 
 .track-card-split{
-  display:flex;
-  align-items:center;
-  gap:25px;
-  max-width:700px;
-  margin:20px auto;
-  padding:18px;
-  background:#1e0a28;
-  border-radius:20px;
-  box-shadow:0 10px 25px rgba(0,0,0,.3);
-  transition:.3s;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  padding: 40px 8%;
 }
 
-.track-card-split:hover{
-  transform:translateY(-5px);
+/* LEFT SIDE (16:9 container) */
+.track-cover{
+  flex: 1;
 }
 
-.track-cover img{
-  width:160px;
-  height:160px;
-  object-fit:cover;
-  border-radius:14px;
-  display:block;
+/* FORCE 16:9 RATIO */
+.track-cover iframe{
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  opacity: 1;
 }
 
+/* RIGHT SIDE */
 .track-info{
-  flex:1;
-  text-align:left;
+  flex: 1;
 }
 
 .track-info h2{
-  color:#f3c16d;
-  margin-bottom:6px;
-  font-size:1.2rem;
+  font-size: 2.5rem;
+  color: #f3c16d;
+  margin-bottom: 10px;
 }
 
 .track-info p{
-  opacity:.8;
-  line-height:1.4;
-  margin-bottom:12px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+  opacity: 0.9;
 }
 
 /* =========================
@@ -285,52 +282,73 @@ footer{
 /* =========================
    MOBILE
 ========================= */
-
 @media (max-width:768px){
 
+ 
   .track-card-split{
-    flex-direction:column;
-    text-align:center;
-    max-width:90%;
+    display: flex;
+    flex-direction: column;  /* STACK */
+    gap: 12px;
+    padding: 20px 5%;
+    align-items: stretch;
   }
 
+  /* TOP: iframe */
+  .track-cover{
+    width: 100%;
+  }
+
+  .track-cover iframe{
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    display: block;
+  }
+
+  /* BOTTOM: info */
   .track-info{
-    text-align:center;
+    width: 100%;
+    text-align: left;
   }
 
-  .track-cover img{
-    width:200px;
-    height:200px;
+  .track-info h2{
+    font-size: 1.2rem;
   }
 
+  .track-info p{
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  
   .spotify-grid,
   .originals-grid{
-    gap:18px;
+    gap: 18px;
   }
 
   .spotify-card iframe,
   .originals-card iframe{
-    height:420px;
+    height: 420px;
   }
 
   .album-grid{
-    grid-template-columns:1fr;
+    grid-template-columns: 1fr;
   }
 
   .album-card img{
-    height:200px;
+    height: 200px;
   }
 
-
-
   .music-hero,
-.spotify-section,
-.originals,
-.albums{
-  position:relative;
-  padding:60px 8% 90px;
-  background:#120018;
-  color:#fff;
-       margin-top: 30px;
+  .spotify-section,
+  .originals,
+  .albums{
+    position: relative;
+    padding: 60px 8% 90px;
+    background: #120018;
+    color: #fff;
+    margin-top: 30px;
+  }
+  .page-content{
+  margin-top:30px;
 }
 }
