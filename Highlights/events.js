@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   {
   day: "03",
-  month: "SEPTEMBER",
+  month: "SEP",
 
   title: "Notebook The Musical",
 
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   status: "ON SALE",
 
-  ticketLink: "https://example.com/tickets",
+  ticketLink: "https://premier.ticketworld.com.ph/shows/show.aspx?sh=NOTEBOOK26",
 
   fullDetails: "Notebook The Musical will run from September 03 to September 20, 2026 at Samsung Performing Arts Theater in Circuit Makati. The production includes 18 performances and tickets are now officially on sale."
 }
@@ -80,28 +80,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const updates = [
     {
-      text: "🔥 EMBER – SOLD OUT SHOW • Morissette is set to perform live at Cache Creek Casino Resort in Brooks, California on June 13, 2026 at 8:00 PM. The show EMBER is officially SOLD OUT, confirming strong demand and overwhelming fan support. This performance at 14455 CA-16 promises an unforgettable night of music and artistry."
+      icon: "🔥",
+      title: "EMBER RETURNS — AND IT'S ALREADY SOLD OUT!",
+      date: "June 13, 2026",
+      content: "Morissette's beloved self-produced Araneta concert, EMBER, is making its way to Cache Creek Casino Resort in Brooks, California on June 13, 2026. With acclaimed musical director Troy Laureta returning to the production, excitement soared as the show officially SOLD OUT just weeks after its announcement. Fans are set to relive the magic of one of Morissette's most celebrated concert experiences."
     },
     {
-      text: "🎭 NOTEBOOK THE MUSICAL – NOW ON SALE • Morissette returns to the stage in Notebook The Musical, running from September 03 to September 20, 2026 at the Samsung Performing Arts Theater in Circuit Makati. The production features 18 live shows, delivering a heartfelt and powerful theatrical experience. Tickets are now officially ON SALE for one of her most anticipated musical roles."
+      icon: "🎭",
+      title: "THEATER COMEBACK: NOTEBOOK THE MUSICAL",
+      date: "September 03–20, 2026",
+      content: "After nearly a decade away from musical theater, Morissette returns to the stage as Middle Allie in Notebook The Musical at the Samsung Performing Arts Theater in Circuit Makati. The highly anticipated production marks her first major theater role in years and showcases a new side of her artistry. Fans also got a first glimpse into the musical journey with the release of her heartfelt rendition of 'My Days.'"
     }
   ];
 
   const container = document.getElementById("updatesContainer");
 
   updates.forEach(update => {
+
     const item = document.createElement("div");
     item.classList.add("update-item");
 
     item.innerHTML = `
-      <p class="update-text">${update.text}</p>
+      <div class="update-header">
+        <span class="update-icon">${update.icon}</span>
+        <h3>${update.title}</h3>
+      </div>
+
+      <span class="update-date">${update.date}</span>
+
+      <p class="update-text">
+        ${update.content}
+      </p>
     `;
 
     container.appendChild(item);
+
   });
 
 });
-
 // MODAL
 
 function openModal(event) {
