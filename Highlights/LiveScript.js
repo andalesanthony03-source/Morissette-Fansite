@@ -115,11 +115,12 @@ ember: [
   ],
 
   signature: [
-    {
-    title: "Trophy (Live Performance)",
-    videoId: "OZtcIE-qmJ0",
-    description: "Live Performance"
+      {
+    title: "Love You Still (Sunset Version)",
+    videoId: "VpeD3hXK_Jc",
+    description: "Sunset Version"
   },
+    
   {
     title: "Love You Still (Music Video)",
     videoId: "wi6J69NaLkA",
@@ -129,7 +130,53 @@ ember: [
     title: "Phoenix (Music Video)",
     videoId: "RJ8Hrl0uqkQ",
     description: "Music Video"
-  }
+  },
+  {
+    title: "Trophy (Live Performance)",
+    videoId: "OZtcIE-qmJ0",
+    description: "Live Performance"
+  },
+   {
+    title: "Mirror (Live)",
+    videoId: "izlk7SsKwuA",
+    description: "Live Performance"
+  },
+  {
+    title: "Love You Still (Live)",
+    videoId: "kpoKV1kzQUY",
+    description: "Live Performance"
+  },
+  {
+    title: "Will You Stay (Live)",
+    videoId: "wDz6QflAEU4",
+    description: "Live Performance"
+  },
+  {
+    title: "Phoenix (Live)",
+    videoId: "CA0H4fD0kG4",
+    description: "Live Performance"
+  },
+  {
+    title: "Trophy (Lyric Visualizer)",
+    videoId: "sakq41ZEYEo",
+    description: "Lyric Visualizer"
+  },
+  {
+    title: "Mirror (Lyric Visualizer)",
+    videoId: "LYh4MKmljv0",
+    description: "Lyric Visualizer"
+  },
+  {
+    title: "Will You Stay (Lyric Visualizer)",
+    videoId: "dz4qs7dvAIQ",
+    description: "Lyric Visualizer"
+  },
+  {
+    title: "Love You Still (Lyric Video)",
+    videoId: "_TjrsMIXAJY",
+    description: "Lyric Video"
+  },
+
   ],
 
   wishbus: [
@@ -143,17 +190,127 @@ ember: [
       videoId: "KTSKIGeqk0s",
       description: "A stunning live cover showing her vocal control and range."
     },
+       {
+      title: "Secret Love Song (Little Mix cover) - Wish 107.5 Bus",
+      videoId: "vqcxM7dSJtw",
+      description: "Live on Wish 107.5 Bus"
+    },
      {
-      title: "Secret Love Song",
+      title: "Shine",
       videoId: "JiKlVfrF79c",
       description: "A heartfelt emotional performance with signature vocals."
     },
+      {
+    title: "Di Mapaliwanag",
+    videoId: "zyOW0v0IQps",
+    description: "Live Performance"
+  },
+  {
+    title: "Gusto Ko Nang Bumitaw",
+    videoId: "cpytykThPdQ",
+    description: "Live Performance"
+  },
+  {
+    title: "Never Enough",
+    videoId: "fjn7X6ywq90",
+    description: "Live Performance"
+  },
+  {
+    title: "Panaginip",
+    videoId: "C__dmRFiuvY",
+    description: "Live Performance"
+  },
+  {
+    title: "Naririnig Mo Ba",
+    videoId: "nrQym0NsSRA",
+    description: "Live Performance"
+  },
+  {
+    title: "You and I",
+    videoId: "kPu8g93EuNc",
+    description: "Live Performance"
+  },
+  {
+    title: "Mahal Naman Kita",
+    videoId: "yu3n-fMqHTY",
+    description: "Live Performance"
+  },
+  {
+    title: "Chandelier",
+    videoId: "oA5oZ-8HFhQ",
+    description: "Live Performance"
+  },
+  {
+    title: "Throwback",
+    videoId: "Ba05VvQM8wM",
+    description: "Live Performance"
+  },
+  {
+    title: "A Whole New World",
+    videoId: "jG-ZIQCQvEI",
+    description: "Live Performance"
+  },
+  {
+    title: "Finally Found Someone",
+    videoId: "HnWTGckONtQ",
+    description: "Live Performance"
+  }
+ 
      
   ],
 
+  broadway: [
+      {
+    title: "My Days",
+    videoId: "pyQv3KUWNU8",
+    description: "Live Performance"
+  },
+    {
+    title: "Home (Diana Ross cover)",
+    videoId: "bFgP4-YhdyA",
+    description: "Live on Stages Sessions"
+  },
+  {
+    title: "Memory (Barbra Streisand cover)",
+    videoId: "YQ8bJv7P3zQ",
+    description: "Live on Stages Sessions"
+  },
+  {
+    title: "Someone Like You (Frank Wildhorn cover)",
+    videoId: "xkEi7bJ2brI",
+    description: "Live on Stages Sessions"
+  },
+  {
+    title: "She Used To Be Mine (Sara Bareilles cover)",
+    videoId: "CCoUfT_oXko",
+    description: "Live on Stages Sessions"
+  },
+  {
+    title: "I'd Give My Life For You (Lea Salonga cover)",
+    videoId: "DJbCze67eQc",
+    description: "Live on Stages Sessions"
+  },
+  {
+    title: "Defying Gravity (Idina Menzel cover)",
+    videoId: "vuxU4ROGxRk",
+    description: "Live on Stages Sessions"
+  }
 
+  ],
 
-  
+  pandemiCovers: [
+    {
+      title: "Akin Ka Na Lang",
+      videoId: "xyp6fZ3gJVA",
+      description: "Wish Bus Performance"
+    },
+    {
+      title: "Never Enough",
+      videoId: "ie5mrbJannA",
+      description: "Live Cover Performance"
+    },
+
+  ],
 
   viral: [
     {
@@ -259,7 +416,11 @@ function renderList(containerId, list) {
        target="_blank"
        class="performance-item">
 
-      <img src="https://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg" alt="${item.title}">
+      <img 
+        src="https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg"
+        alt="${item.title}"
+        onerror="this.src='https://img.youtube.com/vi/${item.videoId}/mqdefault.jpg'"
+      >
 
       <div class="performance-info">
         <h3>${item.title}</h3>
@@ -275,7 +436,8 @@ renderList("ember-list", performances.ember);
 renderList("wishbus-list", performances.wishbus);
 renderList("signature-list", performances.signature);
 renderList("viral-list", performances.viral);
-
+renderList("broadway-list", performances.broadway);
+renderList("pandemiCovers-list", performances.pandemiCovers);
 
 
 
