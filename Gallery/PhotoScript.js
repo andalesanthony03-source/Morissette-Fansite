@@ -1,3 +1,39 @@
+// Toggle
+//Toggle
+
+function toggleMenu(){
+  const nav = document.querySelector(".nav-links");
+  const toggle = document.querySelector(".menu-toggle");
+
+  nav.classList.toggle("show");
+
+  // change icon
+  if(nav.classList.contains("show")){
+    toggle.textContent = "✕";
+  } else {
+    toggle.textContent = "☰";
+  }
+}
+
+// Hide menu when a nav link is clicked (mobile)
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.querySelector(".nav-links").classList.remove("show");
+    document.querySelector(".menu-toggle").textContent = "☰";
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
 // albums
 
 const albums = {
@@ -93,28 +129,8 @@ function closeAlbum(){
 }
 
 
-// Toggle
-function toggleMenu(){
 
-  const nav =
-    document.querySelector(".nav-links");
 
-  const toggle =
-    document.querySelector(".menu-toggle");
-
-  nav.classList.toggle("show");
-
-  if(nav.classList.contains("show")){
-
-    toggle.textContent = "✕";
-
-  } else {
-
-    toggle.textContent = "☰";
-
-  }
-
-}
 
 
 // =========================
@@ -146,23 +162,11 @@ let current = 0;
 
 function showSlide(index){
 
-  slides.forEach((slide, i) => {
-
-    slide.classList.remove("active", "prev", "next");
-
-    if(i === index){
-      slide.classList.add("active");
-    }
-
-    else if(i === (index - 1 + slides.length) % slides.length){
-      slide.classList.add("prev");
-    }
-
-    else if(i === (index + 1) % slides.length){
-      slide.classList.add("next");
-    }
-
+  slides.forEach(slide => {
+    slide.classList.remove("active");
   });
+
+  slides[index].classList.add("active");
 
 }
 
