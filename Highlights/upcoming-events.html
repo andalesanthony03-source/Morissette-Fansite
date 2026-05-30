@@ -22,10 +22,8 @@
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <ul class="nav-links">
       <li><a href="#home">Home</a></li>
-      <li><a href="#performances">Performances</a></li>
-      <li><a href="#awards">Awards</a></li>
-      <li><a href="#updates">Updates</a></li>
-      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#updatesContainer">Announcements</a></li>
+      <li><a href="#eventsContainer">Upcoming Events</a></li>
     </ul>
 
   </nav>
@@ -33,11 +31,11 @@
 
 <main class="page-content">
 
-<section class="updates">
+<section class="updates" id="updatesContainer">
 
   <h2 class="updates-title">Updates & Announcements</h2>
 
-  <div class="updates-container" id="updatesContainer">
+  <div class="updates-container" >
   <!-- JS will inject ONE card -->
 </div>
 
@@ -46,11 +44,11 @@
 
 </main>
  
-<section class="upcoming-events">
+<section class="upcoming-events" id="eventsContainer">
 
   <h2 class="section-title">Upcoming Events</h2>
 
-  <div class="events-container" id="eventsContainer">
+  <div class="events-container" >
     <!-- JS will inject event cards here -->
   </div>
 
@@ -90,6 +88,8 @@
   </div>
 
 </div>
+
+<script src="LiveScript.js"></script>
 
 </body>
 </html>
