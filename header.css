@@ -25,6 +25,7 @@ nav{
   padding:20px 8%;
 
   transition:0.3s ease;
+  z-index: 999
 }
 
 /* LOGO */
