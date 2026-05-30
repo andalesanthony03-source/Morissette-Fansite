@@ -129,22 +129,19 @@ html{
   padding: 40px 8%;
 }
 
-/* LEFT SIDE (16:9 container) */
+/* LEFT SIDE (VIDEO) */
 .track-cover{
   flex: 1;
 }
 
-/* FORCE 16:9 RATIO */
 .track-cover iframe{
   width: 100%;
   aspect-ratio: 16 / 9;
-  height: auto;
   border-radius: 12px;
   display: block;
-  opacity: 1;
 }
 
-/* RIGHT SIDE */
+/* RIGHT SIDE (INFO) */
 .track-info{
   flex: 1;
 }
@@ -284,18 +281,12 @@ footer{
 ========================= */
 @media (max-width:768px){
 
- 
+  /* TRACK CARD */
   .track-card-split{
-    display: flex;
-    flex-direction: column;  /* STACK */
+    flex-direction: column;
     gap: 12px;
     padding: 20px 5%;
     align-items: stretch;
-  }
-
-  /* TOP: iframe */
-  .track-cover{
-    width: 100%;
   }
 
   .track-cover iframe{
@@ -305,7 +296,6 @@ footer{
     display: block;
   }
 
-  /* BOTTOM: info */
   .track-info{
     width: 100%;
     text-align: left;
@@ -319,7 +309,8 @@ footer{
     font-size: 0.85rem;
     line-height: 1.4;
   }
-  
+
+  /* GRIDS */
   .spotify-grid,
   .originals-grid{
     gap: 18px;
@@ -338,17 +329,16 @@ footer{
     height: 200px;
   }
 
+  /* SECTIONS */
   .music-hero,
   .spotify-section,
   .originals,
   .albums{
-    position: relative;
+    margin-top: 30px;
     padding: 60px 8% 90px;
-    background: #120018;
-    color: #fff;
+  }
+
+  .page-content{
     margin-top: 30px;
   }
-  .page-content{
-  margin-top:30px;
-}
 }
