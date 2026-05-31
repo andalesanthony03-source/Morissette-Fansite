@@ -100,6 +100,11 @@ signature: [
     "Adrian/IMG_20260531_145129_181.jpg",
     "Adrian/IMG_20260531_145147_480.jpg",
     "Adrian/IMG_20260531_145240_906.jpg",
+    "Adrian/20260531_163042.jpg",
+"Adrian/20260531_162906.jpg",
+"Adrian/20260531_162856.jpc",
+"Adrian/20260531_162830.jpg",
+"Adrian/IMG_20260531_145234_220.jpg",
   ]
 };
 
