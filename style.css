@@ -685,8 +685,20 @@ margin-bottom: 90PX;
     text-align: center;
     gap: 25px;
     padding: 40px 8%;
-      
   }
+
+
+
+   .hero{
+    transform: translateY(60px);
+    transition: opacity 1.4s ease, transform 1.4s ease;
+  }
+
+
+.hero.show{
+  opacity: 1;
+  transform: translateY(0);
+}
 
   .hero-image{
     order: 1;
