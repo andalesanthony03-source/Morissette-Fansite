@@ -47,6 +47,7 @@ body{
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:25px;
   padding:20px;
+  align-items:start; /* IMPORTANT */
 }
 
 /* CARD */
@@ -61,19 +62,22 @@ body{
   transition:0.4s ease;
   box-shadow:0 0 15px rgba(0,0,0,0.4);
   margin-bottom: 30px;
+  z-index:1;
 }
 
 .album-card:hover{
   transform:translateY(-8px);
+    z-index:10;
 }
 
 .album-card img{
-  width:100%;
-  height:300px;
+   width:100%;
+  aspect-ratio: 1 / 1.2;
   object-fit:cover;
-  object-position:center top;
   display:block;
   transition:0.4s ease;
+
+  
 }
 
 .album-card:hover img{
@@ -199,6 +203,8 @@ body{
   .featured-overlay p{
     font-size:1rem;
   }
+
+
 }
 
 @media (max-width:768px){
@@ -219,15 +225,25 @@ body{
   }
 
   .album-card img{
-    height:340px;
-  }
+   width:100%;
+  aspect-ratio: 1 / 1.2;
+  object-fit:cover;
+  display:block;
+  transition:0.4s ease;
+}
+
+.album-grid{
+  grid-template-columns: repeat(2, 1fr);
+}
 
 .albums-section{
   margin-top: 15px;
   padding:10px 8%;
   position:relative;
 }
-
+ .album-info h3{
+    font-size:1rem;
+  }
 
 }
 
@@ -237,12 +253,26 @@ body{
     font-size:1.8rem;
   }
 
-  .album-card img{
-    height:200px;
-  }
+
+
+.album-card img{
+   width:100%;
+  aspect-ratio: 1 / 1.2;
+  object-fit:cover;
+  display:block;
+  transition:0.4s ease;
+
+  
+}
+
+.album-grid{
+  grid-template-columns: repeat(2, 1fr);
+}
+
+
 
   .album-info h3{
-    font-size:1.1rem;
+    font-size:1rem;
   }
 
   .album-info p{
