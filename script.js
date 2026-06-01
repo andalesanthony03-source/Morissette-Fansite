@@ -69,15 +69,19 @@ const video = document.getElementById("introVideo");
 const soundBtn = document.getElementById("soundBtn");
 
 
+
+
 let preloadCount =
   Number(localStorage.getItem("preloadCount")) || 0;
 
 /* SHOW PRELOADER AGAIN EVERY 2 REFRESHES */
-if(preloadCount >= 1){
+if (preloadCount >= 1) {
 
   localStorage.setItem("preloadCount", 0);
 
-}else{
+  // preloader WILL show here → DO NOTHING YET
+
+} else {
 
   preloader.style.display = "none";
   document.querySelector(".hero").classList.add("show");
@@ -87,7 +91,10 @@ if(preloadCount >= 1){
     preloadCount + 1
   );
 
+
 }
+
+
 
 /* ENABLE SOUND */
 
@@ -138,43 +145,21 @@ soundBtn.addEventListener("click", () => {
 
 /* CLOSE FUNCTION */
 
-function closePreloader(){
+function closePreloader() {
 
   video.pause();
   video.currentTime = 0;
 
   preloader.style.display = "none";
 
-  document.querySelector(".hero")
-    .classList.add("show");
+  document.querySelector(".hero").classList.add("show");
 
-    // SHOW BIRTHDAY MODAL
-  const modal = document.getElementById("birthdayModal");
+     // ✅ PUT IT HERE (THIS IS CORRECT PLACE)
+  setTimeout(() => {
+    showBirthdayModalIfNeeded();
+  }, 300);
 
-  const today = new Date();
-
-  if (
-    today.getFullYear() === 2026 &&
-    today.getMonth() === 5 &&
-    today.getDate() === 2
-  ) {
-    modal.classList.add("show");
-  }
 }
-
-const modal = document.getElementById("birthdayModal");
-const closeBtn = document.querySelector(".birthday-close");
-const celebrateBtn = document.querySelector(".birthday-btn");
-
-function closeModal() {
-  modal.classList.remove("show");
-}
-
-closeBtn.addEventListener("click", closeModal);
-celebrateBtn.addEventListener("click", closeModal);
-
-
-
 
 
 
@@ -215,8 +200,109 @@ video.addEventListener("ended", () => {
 
 
 
+/* ========================================
+   MODAL + CONFETTI SYSTEM
+======================================== */
 
 
+
+
+function showBirthdayModalIfNeeded() {
+
+  const modal = document.getElementById("birthdayModal");
+  const container = document.querySelector(".confetti-container");
+
+  if (!modal || !container) return;
+
+  const today = new Date();
+
+  const isBirthday =
+    today.getFullYear() === 2026 &&
+    today.getMonth() === 5 &&
+    today.getDate() === 2;
+
+  if (isBirthday) {
+    modal.classList.add("show");
+    startConfetti(container);
+  }
+}
+
+
+let confettiInterval = null;
+
+
+/* ELEMENTS (safe inside DOM ready) */
+document.addEventListener("DOMContentLoaded", () => {
+
+  const modal = document.getElementById("birthdayModal");
+  const closeBtn = document.querySelector(".birthday-close");
+  const celebrateBtn = document.querySelector(".birthday-btn");
+  const container = document.querySelector(".confetti-container");
+
+  function openModal() {
+    modal.classList.add("show");
+    startConfetti(container);
+  }
+
+  function closeModal() {
+    modal.classList.remove("show");
+    stopConfetti();
+  }
+
+  closeBtn?.addEventListener("click", closeModal);
+  celebrateBtn?.addEventListener("click", openModal);
+
+});
+
+
+
+/* ========================================
+   CONFETTI
+======================================== */
+function startConfetti(container) {
+
+  if (!container) return;
+  if (confettiInterval) return;
+
+  const colors = ["#FFD700", "#FFA500", "#FF4500", "#FF0000"];
+
+  confettiInterval = setInterval(() => {
+
+    for (let i = 0; i < 5; i++) {
+
+      const confetti = document.createElement("div");
+      confetti.classList.add("confetti");
+
+      const size = Math.random() * 8 + 6;
+
+      confetti.style.width = size + "px";
+      confetti.style.height = size + "px";
+      confetti.style.left = Math.random() * 100 + "%";
+      confetti.style.top = "-50px";
+      confetti.style.backgroundColor =
+        colors[Math.floor(Math.random() * colors.length)];
+      confetti.style.animationDuration = (Math.random() * 3 + 3) + "s";
+
+      container.appendChild(confetti);
+
+      confetti.addEventListener("animationend", () => {
+        confetti.remove();
+      });
+
+    }
+
+  }, 200);
+}
+
+function stopConfetti() {
+
+  clearInterval(confettiInterval);
+  confettiInterval = null;
+
+  if (confettiContainer) {
+    confettiContainer.innerHTML = "";
+  }
+}
 
 
 
@@ -420,5 +506,3 @@ const slides = container.querySelectorAll(".highlight-slide");
   }, 3000);
 
 });
-
-
