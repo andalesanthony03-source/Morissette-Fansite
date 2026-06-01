@@ -141,6 +141,68 @@ html {
   }
 }
 
+.birthday-modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:10000;
+  opacity:0;
+  visibility:hidden;
+  transition:.3s;
+}
+
+.birthday-modal.show{
+  opacity:1;
+  visibility:visible;
+}
+
+.birthday-content{
+  width:90%;
+  max-width:500px;
+  background:linear-gradient(135deg,#2a0036,#4d0f6f);
+  padding:30px;
+  border-radius:20px;
+  text-align:center;
+  color:white;
+  position:relative;
+  box-shadow:0 0 30px rgba(255,215,0,.25);
+}
+
+.birthday-content h2{
+  color:#ffd700;
+  margin-bottom:15px;
+}
+
+.birthday-content p{
+  line-height:1.7;
+}
+
+.birthday-close{
+  position:absolute;
+  top:10px;
+  right:15px;
+  background:none;
+  border:none;
+  color:white;
+  font-size:1.5rem;
+  cursor:pointer;
+}
+
+.birthday-btn{
+  margin-top:20px;
+  padding:12px 25px;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+
+
+
 /* ========================================
    HERO
 ======================================== */
