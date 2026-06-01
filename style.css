@@ -141,17 +141,26 @@ html {
   }
 }
 
+/* =========================
+   BIRTHDAY MODAL
+========================= */
+
 .birthday-modal{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.85);
+
   display:flex;
   justify-content:center;
   align-items:center;
-  z-index:10000;
+
+  background:rgba(0,0,0,.85);
+
+  z-index:999999;
+
   opacity:0;
   visibility:hidden;
-  transition:.3s;
+
+  transition:.4s ease;
 }
 
 .birthday-modal.show{
@@ -159,45 +168,166 @@ html {
   visibility:visible;
 }
 
-.birthday-content{
-  width:90%;
-  max-width:500px;
-  background:linear-gradient(135deg,#2a0036,#4d0f6f);
-  padding:30px;
-  border-radius:20px;
-  text-align:center;
-  color:white;
-  position:relative;
-  box-shadow:0 0 30px rgba(255,215,0,.25);
+/* =========================
+   MODAL CONTENT
+========================= */
+
+.birthday-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0,0,0,.75);
+  backdrop-filter: blur(6px);
+
+  z-index: 9999;
 }
 
-.birthday-content h2{
-  color:#ffd700;
-  margin-bottom:15px;
+.birthday-modal.show {
+  display: flex;
 }
 
-.birthday-content p{
-  line-height:1.7;
+.birthday-content {
+  position: relative;
+  display: inline-block;
 }
 
-.birthday-close{
+.birthday-content::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+
+  border-radius: 28px;
+
+  background: radial-gradient(
+    circle,
+    rgba(255, 215, 0, 0.35),
+    rgba(255, 69, 0, 0.15),
+    transparent 70%
+  );
+
+  filter: blur(20px);
+  z-index: 0;
+}
+
+.birthday-card {
+  display: block;
+  width: min(90vw, 450px);
+  max-height: 80vh;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.6),
+    0 0 25px rgba(255, 215, 0, 0.25);
+
+  animation: popIn .4s ease;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.birthday-close {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+
+  width: 42px;
+  height: 42px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.95);
+  color: black;
+
+  font-size: 22px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,.4);
+
+  z-index: 10001;
+
+  transition: transform .2s ease, background .2s ease;
+}
+
+.birthday-close:hover {
+  transform: scale(1.1);
+  background: white;
+}
+
+.birthday-close:hover {
+  transform: scale(1.1);
+}
+
+.confetti-container {
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+  overflow: hidden;
+
+  z-index: 10000;
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+
+
+.confetti{
   position:absolute;
-  top:10px;
-  right:15px;
-  background:none;
-  border:none;
-  color:white;
-  font-size:1.5rem;
-  cursor:pointer;
+  width:10px;
+  height:10px;
+
+  animation:fall 4s linear forwards;
 }
 
-.birthday-btn{
-  margin-top:20px;
-  padding:12px 25px;
-  border:none;
-  border-radius:30px;
-  cursor:pointer;
-  font-weight:bold;
+@keyframes fall{
+
+  from{
+    transform:
+      translateY(-100px)
+      rotate(0deg);
+  }
+
+  to{
+    transform:
+      translateY(110vh)
+      rotate(720deg);
+  }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+  .birthday-card{
+    width:90vw;
+    max-height:75vh;
+  }
+
 }
 
 
