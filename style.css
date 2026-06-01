@@ -317,19 +317,22 @@ html {
 
 }
 
-/* =========================
-   MOBILE
-========================= */
+@media (max-width: 768px) {
 
-@media(max-width:768px){
+  .birthday-card {
+    width: 85vw;
+    max-height: 70vh;
 
-  .birthday-card{
-    width:90vw;
-    max-height:75vh;
+    object-fit: contain; /* IMPORTANT */
+    display: block;
+
+    border-radius: 16px;
   }
 
+  .birthday-content {
+    padding: 12px;
+  }
 }
-
 
 
 
