@@ -147,7 +147,36 @@ function closePreloader(){
 
   document.querySelector(".hero")
     .classList.add("show");
+
+    // SHOW BIRTHDAY MODAL
+  const modal = document.getElementById("birthdayModal");
+
+  const today = new Date();
+
+  if (
+    today.getFullYear() === 2026 &&
+    today.getMonth() === 5 &&
+    today.getDate() === 2
+  ) {
+    modal.classList.add("show");
+  }
 }
+
+const modal = document.getElementById("birthdayModal");
+const closeBtn = document.querySelector(".birthday-close");
+const celebrateBtn = document.querySelector(".birthday-btn");
+
+function closeModal() {
+  modal.classList.remove("show");
+}
+
+closeBtn.addEventListener("click", closeModal);
+celebrateBtn.addEventListener("click", closeModal);
+
+
+
+
+
 
 /* ========================================
    DOUBLE TAP MOBILE
@@ -392,28 +421,4 @@ const slides = container.querySelectorAll(".highlight-slide");
 
 });
 
-document.addEventListener("DOMContentLoaded", () => {
 
-  const modal = document.getElementById("birthdayModal");
-  const closeBtn = document.querySelector(".birthday-close");
-  const celebrateBtn = document.querySelector(".birthday-btn");
-
-  const today = new Date();
-
-  // June 2, 2026
-  if (
-    today.getFullYear() === 2026 &&
-    today.getMonth() === 5 && // June = 5
-    today.getDate() === 2
-  ) {
-    modal.classList.add("show");
-  }
-
-  function closeModal() {
-    modal.classList.remove("show");
-  }
-
-  closeBtn.addEventListener("click", closeModal);
-  celebrateBtn.addEventListener("click", closeModal);
-
-});
