@@ -49,11 +49,13 @@ const albums = {
   ],
 
 signature: [
-  "SignatureCollection/IMG_20260527_125844_451.jpg",
   "SignatureCollection/IMG_20260527_125908_807.jpg",
   "SignatureCollection/IMG_20260527_125819_354.jpg",
   "SignatureCollection/IMG_20260527_125825_569.jpg",
-  "SignatureCollection/IMG_20260527_125830_585.jpg"
+  "SignatureCollection/IMG_20260527_125830_585.jpg",
+  "SignatureCollection/IMG_20260531_144557_873.jpg",
+  "SignatureCollextion/IMG_20260531_144715_803.jpg",
+  "SignatureCollection/IMG_20260531_144811_304.jpg",
 ],
 
   archive: [
