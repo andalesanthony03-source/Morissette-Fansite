@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const container = document.getElementById("eventsContainer");
 
-events.sort((a, b) => new Date(b.date) - new Date(a.date));
+events.sort((a, b) => new Date(a.date) - new Date(b.date));
   events.forEach(event => {
 
     const card = document.createElement("div");
