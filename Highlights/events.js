@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   day: "05",
   month: "JUL",
    year: "2026",
+   date: "2026-07-05",
 
   title: "PHILIPPINE SUMMER FESTIVAL LONDON",
 
@@ -25,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     day: "13",
     month: "JUN",
    year: "2026",
+   date: "2026-06-13",
 
     title: "EMBER",
 
@@ -45,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   day: "03",
   month: "SEP",
    year: "2026",
+    date: "2026-09-03",
 
   title: "Notebook The Musical",
 
@@ -62,30 +65,10 @@ document.addEventListener("DOMContentLoaded", () => {
 }
 ];
 
-const months = {
-  JAN: 0, FEB: 1, MAR: 2, APR: 3,
-  MAY: 4, JUN: 5, JUL: 6, AUG: 7,
-  SEP: 8, OCT: 9, NOV: 10, DEC: 11
-};
 
-events.sort((a, b) => {
-  const dateA = new Date(
-    parseInt(a.year),
-    months[a.month],
-    parseInt(a.day)
-  );
-
-  const dateB = new Date(
-    parseInt(b.year),
-    months[b.month],
-    parseInt(b.day)
-  );
-
-  return dateB - dateA; // newest first
-});
- 
   const container = document.getElementById("eventsContainer");
 
+events.sort((a, b) => new Date(b.date) - new Date(a.date));
   events.forEach(event => {
 
     const card = document.createElement("div");
