@@ -14,9 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   image: "../Images/philippineSummerFestivalLondon.jpg",
 
-  status: "TICKETS AVAILABLE",
+  status: "ON SALE",
 
-  ticketLink: "https://empire-events.co.uk/",
+  ticketLink: "https://empireevents.uk/events/philippines-summer-festival-2026?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnCqWfkkYWjNqCeleO9XAqiz4wkFuXVEuxqPk5b8luRlpq8rWlfp7oQAli4oU_aem_m4sFfD6HChHz-cavTFLRcg",
 
   fullDetails: "Philippine Summer Festival London will take place on July 4–5, 2026 at New River Sport & Fitness Centre in London. Morissette headlines Day 2 on July 5 alongside Bailey May, Kim Last, and other special guests. The festival features live concerts, traditional Filipino games (Palaro), and a Vendor Village offering authentic Filipino food. Ticket prices start at £5 for children, £15 for General Admission, and £80 for the VIP Experience."
 },
